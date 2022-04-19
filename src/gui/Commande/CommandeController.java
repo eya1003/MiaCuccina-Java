@@ -84,13 +84,20 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
         });
         setUpdateBtn.setOnAction(e->{
             commandeService updateSer = new commandeService();
+        
             try {
-                if(updateSer.update(Integer.parseInt(numCommande.getText()))){
-                    showCommandes();
-                }
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+             
+                updateSer.update(45);
+                updateSer.update(59);
+                updateSer.update(68);
+                updateSer.update(69);
+                updateSer.update(70);
+                showCommandes();
+            } catch (SQLException ex) {
+                Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
             }
+                    
+         
 
 
 

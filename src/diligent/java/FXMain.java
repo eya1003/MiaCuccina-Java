@@ -29,7 +29,7 @@ public class FXMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException{
-      URL root_url = new File("src/Gui/Commande/commande.fxml").toURI().toURL();
+      URL root_url = new File("src/Gui/Commande/Panier.fxml").toURI().toURL();
       Parent parent = FXMLLoader.load(root_url);
         Scene scene = new Scene(parent);
         primaryStage.initStyle(StageStyle.TRANSPARENT);

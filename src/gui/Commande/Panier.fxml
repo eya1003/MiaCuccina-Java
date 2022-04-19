@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -20,7 +21,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1095.0" prefWidth="1216.0" style="-fx-background-color: #FBFCFE; -fx-border-width: 0px 0px 0px 0px;" styleClass="table-view" stylesheets="@Commande.css">
                <children>
-                  <Pane fx:id="banner" layoutX="45.0" layoutY="39.0" prefHeight="146.0" prefWidth="1095.0" styleClass="banner" stylesheets="@Commande.css">
+                  <Pane fx:id="banner" layoutX="45.0" layoutY="39.0" prefHeight="146.0" prefWidth="1095.0" stylesheets="@Commande.css">
                      <children>
                         <ImageView disable="true" fitHeight="146.0" fitWidth="1095.0" pickOnBounds="true" smooth="false">
                            <image>
@@ -48,13 +49,12 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <TableView fx:id="panierView" layoutX="45.0" layoutY="281.0" onMouseClicked="#displaySelected" prefHeight="218.0" prefWidth="750.0" stylesheets="@Commande.css">
+                  <TableView fx:id="panierView" layoutX="45.0" layoutY="281.0" prefHeight="218.0" prefWidth="750.0" stylesheets="@Commande.css">
                     <columns>
-                      <TableColumn fx:id="image" prefWidth="110.99996948242188" text="Image" />
-                      <TableColumn fx:id="nom" prefWidth="150.0" text="Nom" />
-                        <TableColumn fx:id="prix" prefWidth="148.0" text="Prix" />
-                        <TableColumn fx:id="quantite" prefWidth="120.0" text="Quantite" />
-                        <TableColumn fx:id="remove" prefWidth="147.0" text="Remove" />
+                      <TableColumn fx:id="image" prefWidth="131.0" text="Image" />
+                      <TableColumn fx:id="nom" prefWidth="156.0" text="Nom" />
+                        <TableColumn fx:id="prix" prefWidth="158.0" text="Prix" />
+                        <TableColumn fx:id="quantite" prefWidth="124.0" text="Quantite" />
                     </columns>
                   </TableView>
                   <Pane layoutX="859.0" layoutY="299.0" prefHeight="259.0" prefWidth="288.0" style="-fx-background-color: white;" styleClass="EvenementSingle" stylesheets="@Commande.css">
@@ -69,7 +69,7 @@
                               <Font name="Source Sans Pro" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="subTotal" layoutX="189.0" layoutY="73.0" text="\$7500">
+                        <Label fx:id="subTotal" layoutX="189.0" layoutY="73.0">
                            <font>
                               <Font name="Source Sans Pro" size="16.0" />
                            </font>
@@ -80,7 +80,7 @@
                               <Font name="Source Sans Pro Semibold" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="total" layoutX="193.0" layoutY="215.0" text="\$500">
+                        <Label fx:id="total" layoutX="193.0" layoutY="215.0">
                            <font>
                               <Font name="Source Sans Pro Semibold" size="16.0" />
                            </font>
@@ -88,6 +88,11 @@
                      </children>
                   </Pane>
                   <Button layoutX="859.0" layoutY="571.0" mnemonicParsing="false" onAction="#passerCommande" prefHeight="25.0" prefWidth="291.0" styleClass="dark-blue" stylesheets="@Commande.css" text="Passer la commande" />
+                  <Button fx:id="supprimer" layoutX="139.0" layoutY="541.0" mnemonicParsing="false" onMouseClicked="#supprimer" styleClass="dark-blue" stylesheets="@Commande.css" text="Supprimer" />
+                  <Button layoutX="280.0" layoutY="541.0" mnemonicParsing="false" onMouseClicked="#refreshTable" prefHeight="35.0" prefWidth="88.0" styleClass="dark-blue" stylesheets="@Commande.css" text="Refresh" />
+                  <Button fx:id="updatebtn" layoutX="507.0" layoutY="541.0" mnemonicParsing="false" onMouseClicked="#update" prefHeight="35.0" prefWidth="70.0" styleClass="dark-blue" stylesheets="@Commande.css" text="Edit" />
+                  <TextField />
+                  <TextField fx:id="tquantite" layoutX="608.0" layoutY="546.0" styleClass="text-field" stylesheets="@Commande.css" />
                   <!--
                   <JFXButton layoutX="862.0" layoutY="600.0" onAction="#displayAdresse" prefHeight="33.0" prefWidth="273.0" ripplerFill="WHITE" style="-fx-background-color: #106AD2;" text="Passer à la commande" textFill="WHITE">
                            <font>

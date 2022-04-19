@@ -17,6 +17,11 @@ public class Cart {
     private float prix;
     private ImageView imageView;
     private int quantite;
+
+    public Cart(float prix, int quantite) {
+        this.prix = prix;
+        this.quantite = quantite;
+    }
     private String image;
     private Button remove;
     private SpinnerValueFactory<Integer> svf;
@@ -26,6 +31,10 @@ public class Cart {
         this.nomProduit = name;
         this.prix = prix;
 
+    }
+
+    public Cart(int quantite) {
+        this.quantite = quantite;
     }
 
     public Cart(int id, String nomProduit, float prix, int quantite, String image) {
@@ -64,6 +73,10 @@ public class Cart {
         this.prix = prix;
         this.quantite = quantite;
         this.image = image;
+    }
+
+    public Cart() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 
