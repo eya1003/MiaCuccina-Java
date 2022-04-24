@@ -5,6 +5,8 @@
  */
 package gui.back;
 
+import animatefx.animation.BounceIn;
+import animatefx.animation.SlideInLeft;
 import gui.ListReservationController;
 import java.io.IOException;
 import java.net.URL;
@@ -17,6 +19,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -27,6 +31,33 @@ import javafx.stage.StageStyle;
  * @author eyaam
  */
 public class AllFXMLController implements Initializable {
+
+    @FXML
+    private ImageView logo;
+    @FXML
+    private Button a;
+    @FXML
+    private Button b;
+    @FXML
+    private Button c;
+    @FXML
+    private Button d;
+    @FXML
+    private Button e;
+    @FXML
+    private Button f;
+    @FXML
+    private Button g;
+    @FXML
+    private Button i;
+    @FXML
+    private Button k;
+    @FXML
+    private Button l;
+    @FXML
+    private Button m;
+    @FXML
+    private Button n;
 
     /**
      * Initializes the controller class.
@@ -121,17 +152,20 @@ public class AllFXMLController implements Initializable {
 
     @FXML
     private void btnListeCommandes(MouseEvent event) {
+     
+                
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/gui/back/CommandeeFXML.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/gui/back/Commandee.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(CommandeeController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
 
     @FXML
     private void btnListeProduit(MouseEvent event) {

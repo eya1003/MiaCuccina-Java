@@ -29,8 +29,7 @@ import entities.Cart;
 //import entities.Produit;
 import services.LigneCommandeService;
 import services.commandeService;
-//import animatefx.animation.Bounce;
-//import animatefx.animation.FadeInDown;
+import animatefx.animation.*;
 import entities.Produit;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -74,6 +73,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javax.smartcardio.Card;
 import javax.swing.JFrame;
@@ -131,6 +132,14 @@ public class Panier1Controller implements Initializable {
     private Button tribtn;
     @FXML
     private TextField tfsearchmember;
+    @FXML
+    private ImageView logo;
+    @FXML
+    private ImageView imagee;
+    @FXML
+    private Label vide;
+    @FXML
+    private Pane opa;
     
 
     /**
@@ -138,7 +147,8 @@ public class Panier1Controller implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       // new Bounce(banner).play();
+        
+      
 
    showCommandes();
        
@@ -156,9 +166,15 @@ public class Panier1Controller implements Initializable {
       
         
     
-          if (quantite.toString().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "la qauntite ne doit pas etre vide");
+          if (tquantite.getText().equals("")) {
+              JOptionPane.showMessageDialog(null, "la qauntite ne doit pas etre vide");
+             new Shake(tquantite).play();
     } 
+            if ((quantite >= 'A' && quantite <= 'Z') || (quantite >= 'a' && quantite <= 'z')) {
+                 new Shake(tquantite).play();
+                 JOptionPane.showMessageDialog(null, "champs invalide");
+            }
+                
         else {
               Cart p=  new Cart(quantite);
             //String s = "select id_produit from produit where nom='"+tfnom.getText()+"'";
@@ -194,10 +210,15 @@ public class Panier1Controller implements Initializable {
         
         }
         }
+        new Hinge(panierView).play();
+        new FadeOut(opa).play();
+        new FadeInUpBig(vide).play();
+        new FadeOut(total).play();
+        new FadeOut(subTotal).play();
+        new GlowText(vide, Color.BLACK, Color.WHITE).play();
       }        
 
         public void showCommandes() {
-
         try {
            ObservableList<Cart> commandes = new CartService().getAll();
         nom.setCellValueFactory(new PropertyValueFactory<Cart, String>("nomProduit"));
@@ -218,6 +239,8 @@ public class Panier1Controller implements Initializable {
                         
     @FXML
     private void refreshTable(MouseEvent event) {
+         new BounceIn(logo).play();
+         new FadeIn(panierView).play();
         
         try {
             
@@ -317,6 +340,8 @@ public class Panier1Controller implements Initializable {
    @FXML
     private void imprimerTable(ActionEvent event) throws SQLException, DocumentException, ClassNotFoundException, BadElementException, IOException {
         try {
+            
+            
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/diligent", "root", "");
             PreparedStatement pt = con.prepareStatement("select * from cart" );
@@ -396,12 +421,12 @@ public class Panier1Controller implements Initializable {
             my_pdf_report.add(pdfT);
             my_pdf_report.add(new Chunk("\n"));
             my_pdf_report.add(new Paragraph(" "));
-            my_pdf_report.add(new Paragraph(" "));
-            my_pdf_report.add(new Paragraph("MERCI!!"));
+            my_pdf_report.add(new Paragraph("MERCI"));
 
             System.out.println(my_pdf_report);
             my_pdf_report.close();
             JOptionPane.showMessageDialog(null, "imprimer avec succes");
+            new Tada(imprimebtn).play();
 
             /* Close all DB related objects */
             rs.close();
@@ -426,6 +451,7 @@ public class Panier1Controller implements Initializable {
         prix.setCellValueFactory(new PropertyValueFactory<Cart, Float>("prix"));
         panierView.setItems(list);
          this.prixTotal();
+         new Bounce(panierView).play();
     }
     
      @FXML
@@ -440,6 +466,8 @@ public class Panier1Controller implements Initializable {
         prix.setCellValueFactory(new PropertyValueFactory<Cart, Float>("prix"));
         panierView.setItems(list);
          this.prixTotal();
+         
+         new Tada(tfsearchmember).play();
     }
 
 }

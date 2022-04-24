@@ -1,5 +1,6 @@
 package gui.back;
 
+import animatefx.animation.*;
 import entities.Cart;
 import entities.Commande;
 import gui.ListReservationController;
@@ -38,6 +39,7 @@ import javafx.scene.control.Spinner;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import services.CartService;
@@ -80,8 +82,39 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
     private Button tribtn;
     @FXML
     private TextField tfstate1;
+    @FXML
+    private ImageView logo;
+    @FXML
+    private Text title;
+    @FXML
+    private Button a;
+    @FXML
+    private Button b;
+    @FXML
+    private Button c;
+    @FXML
+    private Button d;
+    @FXML
+    private Button e;
+    @FXML
+    private Button f;
+    @FXML
+    private Button g;
+    @FXML
+    private Button i;
+    @FXML
+    private Button k;
+    @FXML
+    private Button l;
+    @FXML
+    private Button m;
+    @FXML
+    private Button n;
+    @FXML
+    private ImageView refrechbtn;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        
         AtomicReference<Commande> commandeAtR = new AtomicReference<>(new Commande());
         showCommandes();
         
@@ -121,6 +154,7 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
         
         
         removeBtn.setOnMouseClicked(event -> {
+         
                            try{ 
                                
                                Commande commande = tableViewCom.getSelectionModel().getSelectedItem();
@@ -166,8 +200,10 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
 
     @FXML
     private void btnListeEpmlacement(MouseEvent event) {
+     
+                
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Parent parent = FXMLLoader.load(getClass().getResource("/gui/back/Commandee.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
@@ -317,6 +353,7 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
     
                @FXML
     private void trierCommande(ActionEvent event) {
+           new JackInTheBox(tribtn).play();
 
             commandeService ms = new commandeService();
         ObservableList<Commande> list = FXCollections.observableArrayList(ms.TrierParId());
@@ -330,7 +367,7 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
     }
     @FXML
     private void search(ActionEvent event) {
-
+                new Tada(tableViewCom).play();
        commandeService ms = new commandeService();
        ObservableList<Commande> list = FXCollections.observableArrayList(ms.RechercherCommande(tfstate1.getText()));
 
@@ -342,6 +379,7 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
     }
     
     public void showCommandes() {
+          
         try {
             ObservableList<Commande> commandes = new commandeService().getAll();
             numCommande.setCellValueFactory(new PropertyValueFactory<>("id_com"));
@@ -356,6 +394,8 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
     }
     @FXML
     private void refreshTable(MouseEvent event) {
+    new BounceIn(logo).play();
+    new RotateIn(refrechbtn).play();
         try {
             
            Connection con = MyDB.getInstance().getConnexion();
@@ -378,7 +418,5 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
             
         
     }
-
-
 
 }

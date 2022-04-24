@@ -18,7 +18,12 @@
    <children>
       <AnchorPane id="AnchorPane" layoutY="-2.0" prefHeight="708.0" prefWidth="1225.0">
          <children>
-            <ImageView fitHeight="157.0" fitWidth="978.0" layoutX="212.0" layoutY="10.0" pickOnBounds="true" smooth="false" AnchorPane.leftAnchor="212.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="10.0">
+            <Label fx:id="vide" layoutX="422.0" layoutY="337.0" prefHeight="115.0" prefWidth="286.0" text="votre panier est vide" textAlignment="CENTER">
+               <font>
+                  <Font name="Segoe Print Bold" size="23.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imagee" fitHeight="157.0" fitWidth="978.0" layoutX="212.0" layoutY="10.0" pickOnBounds="true" smooth="false" AnchorPane.leftAnchor="212.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="10.0">
                <image>
                   <Image url="@../../img/bg-title-page-03.jpg" />
                </image>
@@ -26,7 +31,7 @@
             <Pane layoutX="185.0" layoutY="692.0" prefHeight="3.0" prefWidth="1041.0" style="-fx-background-color: #B42506;" />
             <VBox layoutY="4.0" prefHeight="708.0" prefWidth="200.0" style="-fx-background-color: #B42506;">
                <children>
-                  <ImageView fitHeight="105.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: bounce;">
+                  <ImageView fx:id="logo" fitHeight="153.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: bounce;">
                      <VBox.margin>
                         <Insets bottom="10.0" left="23.0" right="10.0" />
                      </VBox.margin>
@@ -34,7 +39,7 @@
                         <Image url="@../../img/logo3.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" onMouseClicked="#btnmenu" prefHeight="44.0" prefWidth="200.0" styleClass="side" stylesheets="@../../Values/Front.css" text="Menu">
+                  <Button mnemonicParsing="false" onMouseClicked="#btnmenu" prefHeight="44.0" prefWidth="209.0" styleClass="side" stylesheets="@../../Values/Front.css" text="Menu">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -43,13 +48,13 @@
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets right="35.0" top="20.0" />
+                        <Insets right="70.0" top="70.0" />
                      </VBox.margin>
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#btnReservationfront" prefHeight="44.0" prefWidth="200.0" styleClass="side" stylesheets="@../../Values/Front.css" text="Reservation ">
+                  <Button mnemonicParsing="false" onMouseClicked="#btnReservationfront" prefHeight="44.0" prefWidth="160.0" styleClass="side" stylesheets="@../../Values/Front.css" text="Reservation ">
                      <graphic>
                         <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -58,13 +63,13 @@
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets right="10.0" top="5.0" />
+                        <Insets right="40.0" top="10.0" />
                      </VBox.margin>
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#btneventFront" prefHeight="44.0" prefWidth="200.0" styleClass="side" stylesheets="@../../Values/Front.css" text="Evenement">
+                  <Button mnemonicParsing="false" onMouseClicked="#btneventFront" prefHeight="44.0" prefWidth="156.0" styleClass="side" stylesheets="@../../Values/Front.css" text="Evenement">
                      <graphic>
                         <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -73,10 +78,10 @@
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets right="20.0" top="5.0" />
+                        <Insets right="50.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#btnpanierFront" prefHeight="44.0" prefWidth="200.0" styleClass="side" stylesheets="@../../Values/Front.css" text="Panier">
+                  <Button mnemonicParsing="false" onMouseClicked="#btnpanierFront" prefHeight="44.0" prefWidth="145.0" styleClass="side" stylesheets="@../../Values/Front.css" text="Panier">
                      <graphic>
                         <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -85,10 +90,10 @@
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets right="50.0" top="5.0" />
+                        <Insets right="85.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#btnLivraisonFront" prefHeight="44.0" prefWidth="173.0" styleClass="side" stylesheets="@../../Values/Front.css" text="Livraison">
+                  <Button mnemonicParsing="false" onMouseClicked="#btnLivraisonFront" prefHeight="44.0" prefWidth="167.0" styleClass="side" stylesheets="@../../Values/Front.css" text="Livraison">
                      <graphic>
                         <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -96,6 +101,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <VBox.margin>
+                        <Insets right="60.0" top="10.0" />
+                     </VBox.margin>
                   </Button>
                </children>
             </VBox>
@@ -107,14 +115,6 @@
                   <Font name="Segoe Print Bold" size="29.0" />
                </font>
             </Text>
-            <TableView fx:id="panierView" layoutX="224.0" layoutY="287.0" prefHeight="211.0" prefWidth="610.0" stylesheets="@../../Values/Front.css">
-               <columns>
-                  <TableColumn fx:id="image" prefWidth="131.0" text="Image" />
-                  <TableColumn fx:id="nom" prefWidth="156.0" text="Nom" />
-                  <TableColumn fx:id="prix" prefWidth="158.0" text="Prix" />
-                  <TableColumn fx:id="quantite" prefWidth="142.6666259765625" text="Quantite" />
-               </columns>
-            </TableView>
             <Pane layoutX="893.0" layoutY="276.0" prefHeight="265.0" prefWidth="278.0" style="-fx-background-color: white;" styleClass="EvenementSingle" stylesheets="@../../Values/Front.css">
                <children>
                   <Label layoutX="60.0" layoutY="16.0" text="Total Panier">
@@ -168,6 +168,15 @@
             <TextField fx:id="tfsearchmember" layoutX="319.0" layoutY="224.0" onAction="#search" />
             <Button fx:id="tribtn" layoutX="989.0" layoutY="200.0" mnemonicParsing="false" onAction="#trierProduit" prefHeight="38.0" prefWidth="88.0" styleClass="dark-blue" stylesheets="@../../Values/Front.css" text="Trier" />
             <Label layoutX="255.0" layoutY="222.0" prefHeight="25.0" prefWidth="62.0" text="Recherche" />
+            <Pane fx:id="opa" layoutX="409.0" layoutY="335.0" prefHeight="128.0" prefWidth="278.0" style="-fx-background-color: #f4f4f4;" />
+            <TableView fx:id="panierView" layoutX="223.0" layoutY="287.0" prefHeight="211.0" prefWidth="610.0" stylesheets="@../../Values/Front.css">
+               <columns>
+                  <TableColumn fx:id="image" prefWidth="131.0" text="Image" />
+                  <TableColumn fx:id="nom" prefWidth="156.0" text="Nom" />
+                  <TableColumn fx:id="prix" prefWidth="158.0" text="Prix" />
+                  <TableColumn fx:id="quantite" prefWidth="142.6666259765625" text="Quantite" />
+               </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </children>
