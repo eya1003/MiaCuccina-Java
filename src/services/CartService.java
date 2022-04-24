@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import utils.MyDB;
@@ -60,6 +62,67 @@ public class CartService {
             System.out.println(ex.getMessage());
     }
         
+    }
+    
+      public ArrayList<Cart> TrierParId() {
+
+        ArrayList<Cart> List = new ArrayList<>();
+        try {
+
+//            String requete = "select * from membre where role != 'Admin' ORDER BY id DESC ";
+            String req = "select * from cart ORDER BY nomProduit";
+          PreparedStatement pre = cnx.prepareStatement(req);
+
+            ResultSet rs = pre.executeQuery(req);
+
+            while (rs.next()) {
+                Cart m = new Cart();
+
+               
+                m.setNomProduit(rs.getString("nomProduit"));
+                m.setPrix(rs.getInt("prix"));
+                m.setQuantite(rs.getInt("quantite"));
+                m.setImage(rs.getString("image"));
+              
+               
+          
+
+                List.add(m);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return List;
+    }
+      
+      public List<Cart> RechercherProduit(String x) {
+        ArrayList<Cart> List = new ArrayList<>();
+        try {
+            String req = "Select * from cart where nomProduit like '%" + x + "%'  ";
+            System.out.println("aa: "+x);
+       PreparedStatement pre = cnx.prepareStatement(req);
+
+            ResultSet rs = pre.executeQuery(req);
+                while (rs.next()) {
+                    Cart m = new Cart();
+
+                 m.setNomProduit(rs.getString("nomProduit"));
+                m.setPrix(rs.getInt("prix"));
+                m.setQuantite(rs.getInt("quantite"));
+                m.setImage(rs.getString("image"));
+                    System.out.println("x:" +x);
+                    List.add(m);
+                }
+
+            
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        if (List.isEmpty()) {
+            System.out.println("NOT FOUND");
+        }
+        return List;
     }
     
     

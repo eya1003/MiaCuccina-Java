@@ -49,6 +49,8 @@ public class commandeService implements ICommande<Commande> {
     }
 
 
+    
+    
      @Override
     public void create(Commande commande){
         try {
@@ -149,6 +151,69 @@ public class commandeService implements ICommande<Commande> {
         }
         return list;
     }
+    
+    
+     public ArrayList<Commande> TrierParId() {
+
+        ArrayList<Commande> List = new ArrayList<>();
+        try {
+
+            String req = "select * from commande ORDER BY prixtotal";
+          PreparedStatement pre = cnx.prepareStatement(req);
+
+            ResultSet rs = pre.executeQuery(req);
+
+            while (rs.next()) {
+                Commande m = new Commande();
+
+               
+                m.setId_com(rs.getInt("id_com"));
+                m.setPrixtotal(rs.getFloat("prixtotal"));
+                m.setDatecommande(rs.getString("datecommande"));
+                m.setEtatcommande(rs.getInt("etatcommande"));
+              
+               
+          
+
+                List.add(m);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return List;
+    }
+    
+     
+     public List<Commande> RechercherCommande(String x) {
+        ArrayList<Commande> List = new ArrayList<>();
+        try {
+            String req = "Select * from commande where  id_com like '%" + x + "%'  ";
+            System.out.println("aa: "+x);
+       PreparedStatement pre = cnx.prepareStatement(req);
+
+            ResultSet rs = pre.executeQuery(req);
+                while (rs.next()) {
+                 Commande m = new Commande();
+
+               
+                m.setId_com(rs.getInt("id_com"));
+                m.setPrixtotal(rs.getFloat("prixtotal"));
+                m.setDatecommande(rs.getString("datecommande"));
+                m.setEtatcommande(rs.getInt("etatcommande"));
+                    List.add(m);
+                }
+
+            
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        if (List.isEmpty()) {
+            System.out.println("NOT FOUND");
+        }
+        return List;
+    }
+    
 
     
     public Commande getCommande(int idCommande) throws SQLException {

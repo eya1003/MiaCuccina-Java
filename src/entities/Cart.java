@@ -76,8 +76,9 @@ public class Cart {
     }
 
     public Cart() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+
 
 
 
@@ -115,8 +116,7 @@ public class Cart {
 
     public void setQuantite(int quantite) {
         this.quantite = quantite;
-        this.svf = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, this.quantite);
-        this.spinner.setValueFactory(this.svf);
+
     }
 
     public void setImage(String image) {

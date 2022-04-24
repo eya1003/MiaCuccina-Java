@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 /**
  *
- *
+ * @author macbook
  */
 public class MyDB {
     
@@ -42,6 +42,8 @@ public class MyDB {
     public Connection getConnexion() {
         return connexion;
     }
+    
+ 
     
     
 }
