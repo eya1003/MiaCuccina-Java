@@ -112,6 +112,8 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
     private Button n;
     @FXML
     private ImageView refrechbtn;
+    @FXML
+    private Button statbtn;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         
@@ -366,7 +368,7 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
          
     }
     @FXML
-    private void search(ActionEvent event) {
+    private void search() {
                 new Tada(tableViewCom).play();
        commandeService ms = new commandeService();
        ObservableList<Commande> list = FXCollections.observableArrayList(ms.RechercherCommande(tfstate1.getText()));
@@ -416,6 +418,22 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
           
             tableViewCom.setItems(commandeList);
             
+        
+    }
+
+    @FXML
+    private void statistique(ActionEvent event) {
+        
+           try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/gui/back/stat.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 

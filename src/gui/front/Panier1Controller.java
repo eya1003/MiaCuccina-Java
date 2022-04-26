@@ -60,6 +60,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -76,11 +77,14 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javax.smartcardio.Card;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.controlsfx.control.Notifications;
 import services.CartService;
 import utils.MyDB;
+import utils.email;
 
 /**
  * FXML Controller class
@@ -201,6 +205,20 @@ public class Panier1Controller implements Initializable {
         serviceCommande.create(commande);
 
         LigneCommandeService servicePanier = new LigneCommandeService();
+        
+         Notifications notificationBuilder = Notifications.create()
+                    .title("Commande")
+                    .text("Votre Commande est Confirmé")//affichage notif
+                    .graphic(null)
+                    .hideAfter(Duration.seconds(10))
+                    .position(Pos.TOP_RIGHT)
+                    .onAction(new EventHandler<ActionEvent>() {
+                        public void handle(ActionEvent event) {
+                            System.out.println("Clicked on notif");
+                        }
+                    });
+            notificationBuilder.showConfirm();
+
         for (Cart p : panier){
             try {
                 servicePanier.add(new LigneCommande(p.getQuantite(),p.getIdProduit(), serviceCommande.getLastCommande() ));
@@ -209,6 +227,7 @@ public class Panier1Controller implements Initializable {
             }
         
         }
+    
         }
         new Hinge(panierView).play();
         new FadeOut(opa).play();
@@ -216,6 +235,8 @@ public class Panier1Controller implements Initializable {
         new FadeOut(total).play();
         new FadeOut(subTotal).play();
         new GlowText(vide, Color.BLACK, Color.WHITE).play();
+           email n = new email();
+            n.s();
       }        
 
         public void showCommandes() {
@@ -454,8 +475,9 @@ public class Panier1Controller implements Initializable {
          new Bounce(panierView).play();
     }
     
-     @FXML
-    private void search(ActionEvent event) {
+     
+    @FXML
+    private void search() {
 
         CartService ms = new CartService();
        ObservableList<Cart> list = FXCollections.observableArrayList(ms.RechercherProduit(tfsearchmember.getText()));

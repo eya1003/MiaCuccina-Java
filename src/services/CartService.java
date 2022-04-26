@@ -6,7 +6,6 @@
 package services;
 
 import entities.Cart;
-import entities.Commande;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -98,7 +97,7 @@ public class CartService {
       public List<Cart> RechercherProduit(String x) {
         ArrayList<Cart> List = new ArrayList<>();
         try {
-            String req = "Select * from cart where nomProduit like '%" + x + "%'  ";
+            String req = "Select * from cart where nomProduit like '%" + x + "%' or prix like '%" + x + "%' or prix like '%" + x + "%'  ";
             System.out.println("aa: "+x);
        PreparedStatement pre = cnx.prepareStatement(req);
 

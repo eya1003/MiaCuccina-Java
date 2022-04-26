@@ -57,7 +57,16 @@
                         <Font name="Segoe Print Bold" size="11.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tfstate1" layoutX="322.0" layoutY="85.0" onAction="#search" />
+                  <TextField fx:id="tfstate1" layoutX="322.0" layoutY="85.0" onKeyPressed="#search" />
+                  <Button fx:id="statbtn" layoutX="639.0" layoutY="52.0" mnemonicParsing="false" onAction="#statistique" prefHeight="45.0" prefWidth="56.0" styleClass="my-button" stylesheets="@../../Values/style.css">
+                     <graphic>
+                        <ImageView fitHeight="46.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/statistiques.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </Pane>
             <VBox layoutX="-4.0" layoutY="-7.0" prefHeight="648.0" prefWidth="246.0" style="-fx-background-color: #39B8E3;">
@@ -248,7 +257,7 @@
             </VBox>
             <Pane layoutX="224.0" layoutY="58.0" prefHeight="4.0" prefWidth="656.0" style="-fx-background-color: #39B8E3;" />
             <Button layoutX="832.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#close" styleClass="add-btn" stylesheets="@../../Values/style.css" text="X" />
-            <Button fx:id="removeBtn" layoutX="782.0" layoutY="558.0" mnemonicParsing="false" styleClass="my-button" stylesheets="@../../Values/style.css">
+            <Button fx:id="removeBtn" layoutX="678.0" layoutY="564.0" mnemonicParsing="false" styleClass="my-button" stylesheets="@../../Values/style.css">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>

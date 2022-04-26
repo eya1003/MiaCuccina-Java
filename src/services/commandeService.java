@@ -1,6 +1,6 @@
 package services;
 
-import entities.Cart;
+
 import entities.Commande;
 import utils.MyDB;
 //import com.itextpdf.text.*;
@@ -11,14 +11,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author Mintoua
@@ -187,7 +183,7 @@ public class commandeService implements ICommande<Commande> {
      public List<Commande> RechercherCommande(String x) {
         ArrayList<Commande> List = new ArrayList<>();
         try {
-            String req = "Select * from commande where  id_com like '%" + x + "%'  ";
+            String req = "Select * from commande where  id_com like '%" + x + "%' or prixtotal like '%" + x + "%'  or datecommande like '%" + x + "%' ";
             System.out.println("aa: "+x);
        PreparedStatement pre = cnx.prepareStatement(req);
 
@@ -232,7 +228,7 @@ public class commandeService implements ICommande<Commande> {
     }
      @Override
     public int orders(){
-        String req = "select count(*) from";
+        String req = "select count(*) from commande";
 
         try {
             Statement st = cnx.createStatement();
@@ -245,133 +241,79 @@ public class commandeService implements ICommande<Commande> {
         }
         return 0;
     }
-//    public ObservableList<PieChart.Data> getdata(){
-//        ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
-//        String request = "select count(state),date from `order` where state = 0";
-//        try {
-//            Statement statement = cnx.createStatement();
-//            ResultSet rs = statement.executeQuery(request);
-//            while (rs.next()) {
-//                String date = rs.getString(2);
-//                Double count = rs.getDouble(1);
-//                PieChart.Data data = new PieChart.Data(date,count);
-//                list.add(data);
-//            }
-//        } catch (SQLException e) {
-//            Logger.getLogger(Offre_Emploi_Service.class.getName()).log(Level.SEVERE, e.getMessage(), e);
-//        }
-//        return list;
-//    }
-//
-//
-//    @Override
-//    public int[] statistiques() throws SQLException {
-//        int nbreVentes[]={0,0,0,0,0,0,0,0,0,0,0,0};
-//        String req = "select date from  `order` ";
-//        try {
-//            PreparedStatement pst = cnx.prepareStatement(req);
-//            ResultSet rs = pst.executeQuery();
-//            while (rs.next()) {
-//                if (rs.getString(1).contains("-01-")) {
-//                    nbreVentes[0]++;
-//                }
-//                else if (rs.getString(1).contains("-02-")) {
-//                    nbreVentes[1]++;
-//                }
-//                else if (rs.getString(1).contains("-03-")) {
-//                    nbreVentes[2]++;
-//                }
-//                else if (rs.getString(1).contains("-04-")) {
-//                    nbreVentes[3]++;
-//                }
-//                else if (rs.getString(1).contains("-05-")) {
-//                    nbreVentes[4]++;
-//                }
-//                else if (rs.getString(1).contains("-06-")) {
-//                    nbreVentes[5]++;
-//                }
-//                else if (rs.getString(1).contains("-07-")) {
-//                    nbreVentes[6]++;
-//                }
-//                else if (rs.getString(1).contains("-08-")) {
-//                    nbreVentes[7]++;
-//                }
-//                else if (rs.getString(1).contains("-09-")) {
-//                    nbreVentes[8]++;
-//                }
-//                else if (rs.getString(1).contains("-10-")) {
-//                    nbreVentes[9]++;
-//                }
-//                else if (rs.getString(1).contains("-11-")) {
-//                    nbreVentes[10]++;
-//                }
-//                else if (rs.getString(1).contains("-12-")) {
-//                    nbreVentes[11]++;
-//                }
-//
-//            }
-//            return nbreVentes;
-//        } catch (SQLException err) {
-//            System.out.println(err.getMessage());
-//        }
-//        return nbreVentes;
-//    }
-//
-//
-//    @Override
-//    public void historique(int idCommande, ObservableList<Cart> paniers) throws DocumentException, FileNotFoundException, BadElementException, SQLException {
-//        Document document = new Document();
-//        String file_name = "C:\\Users\\Ryaan\\Desktop\\projet\\JobHub-Desktop-Application\\src\\Gui\\Commande\\Facture.pdf";
-//        PdfWriter.getInstance(document, new FileOutputStream(file_name));
-//        document.open();
-//        System.out.println("Montant " + this.getCommande(idCommande).getTotalPayment());
-//        Paragraph p7 = new Paragraph(" ");
-//        Paragraph p4 = new Paragraph(" ");
-//        Paragraph p = new Paragraph("Ci-joint votre facture");
-//        //Paragraph p1 = new Paragraph("Utilisateur: " + user.getUsername());
-//        Paragraph p1 = new Paragraph("Utilisateur: name ");
-//        //Paragraph p3 = new Paragraph("Email: " + user.getEmail());
-//        Paragraph p3 = new Paragraph("Email: useremail" );
-//        Paragraph p2 = new Paragraph("Montant: " + this.getCommande(idCommande).getTotalPayment() + "$ ");
-//        try {
-//            document.add(Image.getInstance("C:\\Users\\Ryaan\\Desktop\\projet\\JobHub-Desktop-Application\\images\\logo.png"));
-//        } catch (IOException ex) {
-//            Logger.getLogger(ServiceCommande.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        document.add(p4);
-//        document.add(p7);
-//        document.add(p);
-//        document.add(p1);
-//        document.add(p3);
-//        document.add(p2);
-//        document.add(new Paragraph(" "));
-//        document.add(new Paragraph(" "));
-//        PdfPTable table = new PdfPTable(6);
-//        table.addCell("Produit");
-//        table.addCell("Prix");
-//        table.addCell("Etat");
-//        table.addCell("Date");
-//        table.addCell("Quantité");
-//        table.addCell("Adresse");
-//        table.setHeaderRows(1);
-//
-//        for (Cart panier : paniers) {
-//            try {
-//                table.addCell(Image.getInstance("C:\\Users\\Ryaan\\Desktop\\projet\\JobHub-Desktop-Application\\src" + panier.getImage()));
-//            } catch (IOException ex) {
-//                Logger.getLogger(ServiceCommande.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            table.addCell(Float.toString(panier.getPrix()));
-//            table.addCell(String.valueOf(this.getCommande(idCommande).isState()));
-//            table.addCell(this.getCommande(idCommande).getDate());
-//            table.addCell(Integer.toString(panier.getQuantite()));
-//
-//        }
-//        System.out.println("Facture générée");
-//        document.add(table);
-//        document.close();
-//
-//    }
+    public ObservableList<PieChart.Data> getdata(){
+        ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
+        String request = "select count(etatcommande),datecommande from `commande` where etatcommande = 0";
+        try {
+            Statement statement = cnx.createStatement();
+            ResultSet rs = statement.executeQuery(request);
+            while (rs.next()) {
+                String date = rs.getString(2);
+                Double count = rs.getDouble(1);
+                PieChart.Data data = new PieChart.Data(date,count);
+                list.add(data);
+            }
+        } catch (SQLException e) {
+          
+        }
+        return list;
+    }
+
+    
+    public int[] statistiques() throws SQLException {
+        int nbreVentes[]={0,0,0,0,0,0,0,0,0,0,0,0};
+        String req = "select datecommande from  `commande` ";
+        try {
+            PreparedStatement pst = cnx.prepareStatement(req);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                if (rs.getString(1).contains("-01-")) {
+                    nbreVentes[0]++;
+                }
+                else if (rs.getString(1).contains("-02-")) {
+                    nbreVentes[1]++;
+                }
+                else if (rs.getString(1).contains("-03-")) {
+                    nbreVentes[2]++;
+                }
+                else if (rs.getString(1).contains("-04-")) {
+                    nbreVentes[3]++;
+                }
+                else if (rs.getString(1).contains("-05-")) {
+                    nbreVentes[4]++;
+                }
+                else if (rs.getString(1).contains("-06-")) {
+                    nbreVentes[5]++;
+                }
+                else if (rs.getString(1).contains("-07-")) {
+                    nbreVentes[6]++;
+                }
+                else if (rs.getString(1).contains("-08-")) {
+                    nbreVentes[7]++;
+                }
+                else if (rs.getString(1).contains("-09-")) {
+                    nbreVentes[8]++;
+                }
+                else if (rs.getString(1).contains("-10-")) {
+                    nbreVentes[9]++;
+                }
+                else if (rs.getString(1).contains("-11-")) {
+                    nbreVentes[10]++;
+                }
+                else if (rs.getString(1).contains("-12-")) {
+                    nbreVentes[11]++;
+                }
+
+            }
+            return nbreVentes;
+        } catch (SQLException err) {
+            System.out.println(err.getMessage());
+        }
+        return nbreVentes;
+    }
+
+
+   
 
 
 }

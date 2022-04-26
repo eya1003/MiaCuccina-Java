@@ -165,7 +165,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <TextField fx:id="tfsearchmember" layoutX="319.0" layoutY="224.0" onAction="#search" />
+            <TextField fx:id="tfsearchmember" layoutX="319.0" layoutY="224.0" onKeyPressed="#search" />
             <Button fx:id="tribtn" layoutX="989.0" layoutY="200.0" mnemonicParsing="false" onAction="#trierProduit" prefHeight="38.0" prefWidth="88.0" styleClass="dark-blue" stylesheets="@../../Values/Front.css" text="Trier" />
             <Label layoutX="255.0" layoutY="222.0" prefHeight="25.0" prefWidth="62.0" text="Recherche" />
             <Pane fx:id="opa" layoutX="409.0" layoutY="335.0" prefHeight="128.0" prefWidth="278.0" style="-fx-background-color: #f4f4f4;" />
