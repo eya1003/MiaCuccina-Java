@@ -135,7 +135,16 @@ public class BackEmplacementFXMLController implements Initializable {
                         ////modifier
                         btnModifier.setOnMouseClicked((MouseEvent event) -> {                       
                 if (emplacementTable.getSelectionModel().getSelectedItem() != null) {
-            EmplacementService updateSer = new EmplacementService();
+            try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/BackAjoutEmplacementFXML.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AllFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
                  
                     }
 

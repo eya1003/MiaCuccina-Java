@@ -7,8 +7,11 @@ package gui.back;
 
 import entities.Emplacement;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -113,20 +116,28 @@ public class BackModifierEmplacementFXMLController implements Initializable {
           
          
 
+        try {
             EmplacementService cs = new EmplacementService();
             String vuue = tvuemodif.getText();
             String description = tdescriptionmodif.getText();
+            Emplacement c = new Emplacement( "vue sur mer", "belle");
+            
 
             Alert a1 = new Alert(Alert.AlertType.CONFIRMATION);
             a1.setTitle("Modification d'une catégorie");
             a1.setContentText("vous voulez vraiment Mdofier cette catégorie ?");
             Optional<ButtonType> result = a1.showAndWait();
             if (result.get() == ButtonType.OK) {
-           //     cs.modifierEmplacement(c, id);
+                cs.modifierEmplacement(c, 131);
 
             } else if (result.get() == ButtonType.CANCEL) {
-
+                    Alert a12 = new Alert(Alert.AlertType.ERROR);
+            a1.setTitle("Modification d'une catégorie");
+            a1.setContentText("Modification no aprouvée");
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(BackModifierEmplacementFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         }
     

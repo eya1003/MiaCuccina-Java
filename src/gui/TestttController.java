@@ -28,8 +28,10 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.paint.Color;
-
+import entities.Reservation;
+import static gui.front.FrontReservationFXMLController.toCalendar;
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,9 +54,9 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.paint.Color;
-import gui.AttendenceClass;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.HBox;
+import services.ReservationService;
 /**
  * FXML Controller class
  *
@@ -62,22 +64,21 @@ import javafx.scene.layout.HBox;
  */
 public class TestttController implements Initializable {
 
-
     @FXML
     private ComboBox<String> yearCombo;
 
     @FXML
     public TabPane eTabpane;
     //PASS YEARS TO BE DISPLAYED ON COMBOBOX
-    private final ObservableList<String> yearArray = FXCollections.observableArrayList("2019", "2020", "2021");
+    private final ObservableList<String> yearArray = FXCollections.observableArrayList("2022", "2023");
     //PASS DATES(*DAY ONLY) TO BE DISPLAYED ON TABLECELL
     private final ObservableList<String> datesArray = FXCollections.observableArrayList("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30");
     //PASS CORRESPONDING MONTH
     private final ObservableList<String> monthArray = FXCollections.observableArrayList("01","02","03","04","05","06","07","08","09","10","11","12","01","02","03","04","05","06","07","08","09","10","11","12","01","02","03","04","05","06");
     //PASS ATTENDANCE STATUS FOR CORRESPONDING DATESe
-    private final ObservableList<String> statusArray = FXCollections.observableArrayList("present", "absent","present", "absent","present", "absent","present", "absent","present", "absent","presnt",
-            "present", "absent","present", "absent","present", "absent","present", "absent","present", "absent","presnt",
-            "present", "absent","present", "absent","present", "absent","present", "absent","present", "absent","presnt");
+    private final ObservableList<String> statusArray = FXCollections.observableArrayList("absent", "absent","absent", "absent","present", "absent","absent", "absent","absent", "absent","absent",
+            "absent", "absent","absent", "absent","absent", "absent","absent", "absent","absent", "absent","absent",
+            "absent", "absent","absent", "absent","absent", "present","absent", "absent","absent", "absent","absent");
     
 
     public final List<String> dayarray = new ArrayList<String>();
@@ -120,10 +121,6 @@ public class TestttController implements Initializable {
     private static final List<String> aprarrayforthursday = Arrays.asList("", "", "", "", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "", "", "", "", "", "", "", "");
     private static final List<String> aprarrayforfriday = Arrays.asList("", "", "", "", "", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "", "", "", "", "", "", "");
     private static final List<String> aprarrayforsaturday = Arrays.asList("", "", "", "", "", "", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "", "", "", "", "", "");
-    @FXML
-    private Tab tTab;
-    @FXML
-    private HBox atHbox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -140,7 +137,7 @@ public class TestttController implements Initializable {
                     attributeTable.getColumns().clear();                    
                     buildYearTable(Integer.parseInt(t1));
                 } catch (SQLException ex) {
-                    Logger.getLogger(TrackEmployeeController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(TestttController.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                
@@ -187,13 +184,9 @@ public class TestttController implements Initializable {
                                     //#PRESENT
                                     if (status.equals("present")) {
                                         setTextFill(Color.BLACK);
-                                         setStyle("-fx-background-color:green");
+                                         setStyle("-fx-background-color:yellow");
                                     }
-                                    //#ABSENT
-                                    else {
-                                        setTextFill(Color.BLUE);
-                                        setStyle("-fx-background-color:red");
-                                    }
+                                    
                                 } else {
                                     setTextFill(Color.GRAY);
                                     setText(item);

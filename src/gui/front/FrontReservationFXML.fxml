@@ -14,8 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="750.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="gui.front.FrontReservationFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.front.FrontReservationFXMLController">
    <children>
       <VBox prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #B42506;">
          <children>
@@ -214,20 +213,28 @@
                   <Insets top="10.0" />
                </padding>
             </VBox>
-            <Button mnemonicParsing="false" onMouseClicked="#clean" prefHeight="35.0" prefWidth="145.0" style="-fx-background-color: #B42506;" styleClass="search-button" stylesheets="@../Values/style.css" text="Effacer" textFill="#1e0904">
+            <Button mnemonicParsing="false" onMouseClicked="#clean" prefHeight="53.0" prefWidth="129.0" style="-fx-background-color: #B42506;" styleClass="search-button" stylesheets="@../Values/style.css" text="Effacer" textFill="#1e0904">
                <font>
                   <Font name="Segoe Print Bold" size="22.0" />
                </font>
                <VBox.margin>
-                  <Insets left="300.0" />
+                  <Insets left="330.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onMouseClicked="#save" prefHeight="35.0" prefWidth="145.0" style="-fx-background-color: #B42506;" styleClass="search-button" stylesheets="@../Values/style.css" text="Réserver" textFill="#1e0904">
+            <Button mnemonicParsing="false" onMouseClicked="#save" prefHeight="53.0" prefWidth="124.0" style="-fx-background-color: #B42506;" styleClass="search-button" stylesheets="@../Values/style.css" text="Réserver" textFill="#1e0904">
                <font>
                   <Font name="Segoe Print Bold" size="22.0" />
                </font>
                <VBox.margin>
                   <Insets left="50.0" top="-50.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#imprimerTable" onMouseClicked="#clean" prefHeight="53.0" prefWidth="150.0" style="-fx-background-color: #B42506;" styleClass="search-button" stylesheets="@../Values/style.css" text="Imprimer" textFill="#1e0904">
+               <font>
+                  <Font name="Segoe Print Bold" size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="180.0" />
                </VBox.margin>
             </Button>
          </children>

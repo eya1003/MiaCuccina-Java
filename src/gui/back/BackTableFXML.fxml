@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -232,21 +231,20 @@
             <String fx:value="add-btn" />
          </styleClass>
       </Button>
-      <VBox layoutX="253.0" layoutY="62.0" prefHeight="106.0" prefWidth="135.0">
-         <children>
-            <TextField fx:id="tfsearch" onKeyPressed="#search" prefHeight="30.0" prefWidth="140.0" promptText="type here to search" stylesheets="@../../Values/style.css">
-               <styleClass>
-                  <String fx:value="search-box" />
-                  <String fx:value="shadow" />
-                  <String fx:value="search-box" />
-               </styleClass>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </TextField>
-         </children>
-      </VBox>
-      <Button layoutX="741.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#triii" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier">
+      <VBox layoutX="253.0" layoutY="62.0" prefHeight="106.0" prefWidth="135.0" />
+      <Button layoutX="735.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#triii" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Stock">
+         <styleClass>
+            <String fx:value="search-button" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </Button>
+      <Button layoutX="735.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#triiiChaise" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Chaises">
+         <styleClass>
+            <String fx:value="search-button" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </Button>
+      <Button layoutX="630.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#triiiId" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Id">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="shadow" />

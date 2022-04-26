@@ -46,7 +46,7 @@ public class Mailing {
             message.setFrom(new InternetAddress("madara1234g@gmail.com"));
             message.setRecipients(
                     Message.RecipientType.TO,
-                    InternetAddress.parse("bouounnour81@gmail.com , hatemmajouri12@gmail.com")
+                    InternetAddress.parse("eya.amor23@gmail.com , hatemmajouri12@gmail.com")
             );
             message.setSubject("Mia cuccina");
             message.setText("Votre réservation est confirmée!");

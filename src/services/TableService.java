@@ -89,10 +89,69 @@ public class TableService implements ITable<Table>{
         return List;
     }
  
+ public ArrayList<Table> TrierParChaise() {
+
+        ArrayList<Table> List = new ArrayList<>();
+        try {
+
+            String req = "select * from `table` ORDER BY nb_chaise_tab";
+          PreparedStatement pre = connexion.prepareStatement(req);
+
+            ResultSet rs = pre.executeQuery(req);
+
+            while (rs.next()) {
+                Table m = new Table();
+
+               
+                m.setId_tab(rs.getInt("id_tab"));
+                m.setNb_chaise_tab(rs.getInt("nb_chaise_tab"));
+                m.setStock_tab(rs.getInt("stock_tab"));
+                m.setEmp(rs.getString("emp"));
+             
+               
+         
+
+                List.add(m);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return List;
+    }
+  public ArrayList<Table> TrierParId() {
+
+        ArrayList<Table> List = new ArrayList<>();
+        try {
+
+            String req = "select * from `table` ORDER BY id_tab";
+          PreparedStatement pre = connexion.prepareStatement(req);
+
+            ResultSet rs = pre.executeQuery(req);
+
+            while (rs.next()) {
+                Table m = new Table();
+
+               
+                m.setId_tab(rs.getInt("id_tab"));
+                m.setNb_chaise_tab(rs.getInt("nb_chaise_tab"));
+                m.setStock_tab(rs.getInt("stock_tab"));
+                m.setEmp(rs.getString("emp"));
+             
+               
+         
+
+                List.add(m);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return List;
+    }
+ 
   public List<Table> RechercherTable(String x) {
         ArrayList<Table> List = new ArrayList<>();
         try {
-String req = "Select * from table where  stock_tab like '%" + x + "%'  ";        
+            String req = "select * from `table` where  nb_chaise_tab like '%" + x + "%' ";
 System.out.println("aa: "+x);
        PreparedStatement pre = connexion.prepareStatement(req);
 
@@ -118,5 +177,5 @@ System.out.println("aa: "+x);
         }
         return List;
     }
-   
+  
 }

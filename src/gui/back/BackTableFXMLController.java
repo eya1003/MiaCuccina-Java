@@ -280,15 +280,14 @@ public class BackTableFXMLController implements Initializable {
     }
 
     private void search(MouseEvent event) {
-        TableService ms = new TableService();
+       TableService ms = new TableService();
         ObservableList<Table> liste = FXCollections.observableArrayList(ms.RechercherTable(tfsearch.getText()));
-        
-         idColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("id_tab"));
+        idColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("id_tab"));
             vueColl1.setCellValueFactory(new PropertyValueFactory<Emplacement,String>("emp"));
             nbChaiseColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("nb_chaise_tab"));   
             stockcoll.setCellValueFactory(new PropertyValueFactory<Table,Integer>("stock_tab"));
-            tabletable.setItems(table);
-      
+            tabletable.setItems(liste);
+       
     }
 
     
@@ -297,6 +296,29 @@ public class BackTableFXMLController implements Initializable {
     private void triii(MouseEvent event) {
         TableService ms = new TableService();
         ObservableList<Table> liste = FXCollections.observableArrayList(ms.TrierParStockTable());
+
+             idColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("id_tab"));
+            vueColl1.setCellValueFactory(new PropertyValueFactory<Emplacement,String>("emp"));
+            nbChaiseColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("nb_chaise_tab"));   
+            stockcoll.setCellValueFactory(new PropertyValueFactory<Table,Integer>("stock_tab"));
+            tabletable.setItems(liste);
+    }
+    
+     @FXML
+    private void triiiChaise(MouseEvent event) {
+        TableService ms = new TableService();
+        ObservableList<Table> liste = FXCollections.observableArrayList(ms.TrierParChaise());
+
+             idColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("id_tab"));
+            vueColl1.setCellValueFactory(new PropertyValueFactory<Emplacement,String>("emp"));
+            nbChaiseColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("nb_chaise_tab"));   
+            stockcoll.setCellValueFactory(new PropertyValueFactory<Table,Integer>("stock_tab"));
+            tabletable.setItems(liste);
+    }
+    @FXML
+    private void triiiId(MouseEvent event) {
+        TableService ms = new TableService();
+        ObservableList<Table> liste = FXCollections.observableArrayList(ms.TrierParId());
 
              idColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("id_tab"));
             vueColl1.setCellValueFactory(new PropertyValueFactory<Emplacement,String>("emp"));

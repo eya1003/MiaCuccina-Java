@@ -5,10 +5,30 @@
  */
 package gui.front;
 
+import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.sun.scenario.effect.ImageData;
 import entities.Reservation;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -49,6 +69,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import javax.swing.JOptionPane;
 import org.controlsfx.control.Notifications;
 import pidevjava.PidevJava;
 import services.ReservationService;
@@ -60,6 +81,7 @@ import utils.email;
  * @author eyaam
  */
 public class FrontReservationFXMLController implements Initializable {
+
 
     @FXML
     private TextField tfphone;
@@ -223,21 +245,25 @@ public class FrontReservationFXMLController implements Initializable {
                 Reservation p = new Reservation(Integer.parseInt(tfphone.getText()), tfadresse.getText(), Date.valueOf(tdatedebut.getValue()), Date.valueOf(tdatefin.getValue()));
                 ReservationService ps = new ReservationService();
                 
-                email ns = new email();
-                ns.s();
                 
             Date resv = p.getDate_resv();
             
               ps.ajouterReservation(p);
+              email n = new email();
+              n.s();
+              Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Succes");
+            alert.setContentText("Reservation établie");
+            alert.show();
 
             //converting date resv to calendar 
             toCalendar(resv);
             ////
             java.util.Date today = new java.util.Date();
 
-            PidevJava myobject = new PidevJava();
+            //PidevJava myobject = new PidevJava();
 
-            long days = myobject.diff(today, resv);
+            long days = diff(today, resv);
 
             SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,YYYY");
             String todaysDate = sdf.format(today);
@@ -245,6 +271,13 @@ public class FrontReservationFXMLController implements Initializable {
             String newYearsDay = sdf.format(resv);
             System.out.println(days + "     days from today s date of    " + todaysDate + "  until   " + newYearsDay);
 
+/////// check
+
+             
+            
+
+/////
+          
             Notifications notificationBuilder = Notifications.create()
                     .title("RESERVATION NOTIFICATION ")
                     .text(days + "  nombre des jours restants de la date   " + todaysDate
@@ -270,5 +303,150 @@ public class FrontReservationFXMLController implements Initializable {
     }
 }
 
+    
+     @FXML
+    private void imprimerTable(ActionEvent event) throws SQLException, DocumentException, ClassNotFoundException, BadElementException, IOException {
+        try {
+            
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/diligent", "root", "");
+            PreparedStatement pt = con.prepareStatement("select * from reservation" );
+            ResultSet rs = pt.executeQuery();
 
+
+            
+            /* Step-2: Initialize PDF documents - logical objects */
+            Document my_pdf_report = new Document();
+            
+            PdfWriter.getInstance(my_pdf_report, new FileOutputStream("resv.pdf"));
+            
+                  // Creating an ImageData object       
+                 //PDImageXObject pdImage = PDImageXObject.createFromFile("/eclipse-workspace/java.jpeg",my_pdf_report); 
+
+            my_pdf_report.open();
+            
+         String filename = "C:\\Users\\eyaam\\Downloads\\PidevJava 2\\PidevJava\\src\\img\\logo3.png";
+            Image image = Image.getInstance(filename);
+             my_pdf_report.add(image); 
+            Font font = new Font(Font.FontFamily.HELVETICA, 24, Font.BOLD);
+            Paragraph pdfTitle = new Paragraph("Reservation", font);
+            pdfTitle.setAlignment(Element.ALIGN_CENTER);
+            my_pdf_report.add(pdfTitle);
+            my_pdf_report.add(new Chunk("\n"));
+            my_pdf_report.addCreationDate();
+ 
+            //we have five columns in our table
+            PdfPTable my_report_table = new PdfPTable(4);
+
+            //create a cell object
+            PdfPCell table_cell;
+
+            table_cell = new PdfPCell(new Phrase("Date Debut"));
+            table_cell.setBackgroundColor(BaseColor.RED);
+            my_report_table.addCell(table_cell);
+            table_cell = new PdfPCell(new Phrase("Date fin"));
+            table_cell.setBackgroundColor(BaseColor.RED);
+            my_report_table.addCell(table_cell);
+            table_cell = new PdfPCell(new Phrase("Email"));
+            table_cell.setBackgroundColor(BaseColor.RED);
+            my_report_table.addCell(table_cell);
+               table_cell = new PdfPCell(new Phrase("Phone"));
+            table_cell.setBackgroundColor(BaseColor.RED);
+            my_report_table.addCell(table_cell);
+  
+  
+
+
+            while (rs.next()) {
+
+                String nom = rs.getString("date_resv");
+                table_cell = new PdfPCell(new Phrase(nom));
+                my_report_table.addCell(table_cell);
+                String qt = rs.getString("end_resv");
+                table_cell = new PdfPCell(new Phrase(qt));
+                my_report_table.addCell(table_cell);
+                String prixP = rs.getString("email_resv");
+                table_cell = new PdfPCell(new Phrase(prixP));
+                my_report_table.addCell(table_cell);
+                    String PHONE = rs.getString("phone_resv");
+                table_cell = new PdfPCell(new Phrase(PHONE));
+                my_report_table.addCell(table_cell);
+                
+                
+          
+            }
+            /* Attach report table to PDF */
+            my_pdf_report.add(my_report_table);
+            my_pdf_report.add(new Paragraph(" "));
+            my_pdf_report.add(new Chunk("\n"));
+            my_pdf_report.add(new Paragraph(" "));
+            my_pdf_report.add(new Paragraph("MERCI"));
+
+            System.out.println(my_pdf_report);
+            my_pdf_report.close();
+            JOptionPane.showMessageDialog(null, "imprimer avec succes");
+
+            /* Close all DB related objects */
+            rs.close();
+            pt.close();
+            con.close();
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+/* 
+  // Create function for finding difference   
+    static void find(String join_date, String leave_date)   
+    {   
+        // Create an instance of the SimpleDateFormat class  
+        SimpleDateFormat obj = new SimpleDateFormat("MM-dd-yyyy ");
+         String eya =  "24-12-2022";
+                     String var =   "25-12-2022";
+        // In the try block, we will try to find the difference  
+        try {   
+            // Use parse method to get date object of both dates  
+            Date date1 = (Date) obj.parse(eya);   
+            Date date2 = (Date) obj.parse(var);   
+            // Calucalte time difference in milliseconds   
+            long time_difference = date2.getTime() - date1.getTime();  
+            // Calucalte time difference in days  
+            long days_difference = (time_difference / (1000*60*60*24)) % 365;   
+            // Calucalte time difference in years  
+            long years_difference = (time_difference / (1000l*60*60*24*365));   
+            // Calucalte time difference in seconds  
+            long seconds_difference = (time_difference / 1000)% 60;   
+            // Calucalte time difference in minutes  
+            long minutes_difference = (time_difference / (1000*60)) % 60;   
+              
+            // Calucalte time difference in hours  
+            long hours_difference = (time_difference / (1000*60*60)) % 24;   
+            // Show difference in years, in days, hours, minutes, and seconds   
+            System.out.print(   
+                "Difference "  
+                + "between two dates is: ");   
+            System.out.println(   
+                hours_difference   
+                + " hours, "  
+                + minutes_difference   
+                + " minutes, "  
+                + seconds_difference   
+                + " seconds, "  
+                + years_difference   
+                + " years, "  
+                + days_difference   
+                + " days"  
+                );   
+        }   
+        // Catch parse exception   
+        catch (ParseException excep) {   
+            excep.printStackTrace();   
+        }   
+    
+}
+
+
+}*/
 }

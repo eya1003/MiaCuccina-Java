@@ -246,7 +246,19 @@
             </TextField>
          </children>
       </VBox>
-      <Button layoutX="741.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#triii" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier">
+      <Button layoutX="735.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#triii" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Stock">
+         <styleClass>
+            <String fx:value="search-button" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </Button>
+      <Button layoutX="735.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#triiiChaise" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Chaises">
+         <styleClass>
+            <String fx:value="search-button" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </Button>
+      <Button layoutX="630.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#triiiId" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Id">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="shadow" />
