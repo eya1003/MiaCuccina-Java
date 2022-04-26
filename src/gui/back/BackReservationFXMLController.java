@@ -6,8 +6,6 @@
 package gui.back;
 
 import entities.Reservation;
-import gui.ListReservationController;
-import gui.ListTablesController;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -32,6 +30,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -82,7 +81,7 @@ public class BackReservationFXMLController implements Initializable {
         }
         
         } catch (SQLException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackReservationFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
             phoneColl.setCellValueFactory(new PropertyValueFactory<Reservation,Integer>("phone_resv"));   
             mailColl.setCellValueFactory(new PropertyValueFactory<Reservation,String>("email_resv"));
@@ -157,7 +156,7 @@ public class BackReservationFXMLController implements Initializable {
 
     @FXML
     private void btndashboardd(MouseEvent event) {
-        try {
+         try {
             Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/AllFXML.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
@@ -171,7 +170,7 @@ public class BackReservationFXMLController implements Initializable {
 
     @FXML
     private void btnListeTable(MouseEvent event) {
-           try {
+         try {
             Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/BackTableFXML.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
@@ -179,13 +178,13 @@ public class BackReservationFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(AllFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackTableFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @FXML
     private void btnListeEpmlacement(MouseEvent event) {
-          try {
+         try {
             Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/BackEmplacementFXML.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
@@ -193,41 +192,122 @@ public class BackReservationFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(AllFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackEmplacementFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    @FXML
+    private void btnListeReservation(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/BackReservationFXML.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(BackReservationFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @FXML
-    private void btnListeReservation(MouseEvent event) {
-    }
-
-    @FXML
     private void btnlListeEvent(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+            //Logger.getLogger(.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     private void btnListePanier(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+          //  Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     private void btnListeCommandes(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     private void btnListeProduit(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+          //  Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     private void btnListeLivreur(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     private void btnListeLivraison(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     private void btnListeUser(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+
+
 
     @FXML
     private void close(MouseEvent event) {
@@ -266,7 +346,7 @@ public class BackReservationFXMLController implements Initializable {
         }
         
         } catch (SQLException ex) {
-            Logger.getLogger(ListTablesController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackReservationFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
           
             phoneColl.setCellValueFactory(new PropertyValueFactory<Reservation,Integer>("phone_resv"));   
@@ -291,9 +371,10 @@ public class BackReservationFXMLController implements Initializable {
        ReservationTable.setItems(list);
     }
 
+
     @FXML
-    private void search(MouseEvent event) {
-          ReservationService ms = new ReservationService();
+    private void search(KeyEvent event) {
+        ReservationService ms = new ReservationService();
         ObservableList<Reservation> liste = FXCollections.observableArrayList(ms.RechercherReservation(tfsearch.getText()));
         
 phoneColl.setCellValueFactory(new PropertyValueFactory<Reservation,Integer>("phone_resv"));   

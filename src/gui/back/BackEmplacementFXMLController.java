@@ -6,8 +6,6 @@
 package gui.back;
 
 import entities.Emplacement;
-import gui.ListEmplacementsController;
-import gui.ListReservationController;
 import java.awt.Color;
 import java.io.IOException;
 import java.net.URL;
@@ -85,7 +83,7 @@ public class BackEmplacementFXMLController implements Initializable {
         }
         
         } catch (SQLException ex) {
-            Logger.getLogger(ListEmplacementsController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackEmplacementFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
          idColl.setCellValueFactory(new PropertyValueFactory<Emplacement,Integer>("id_emplacement"));
             vueColl.setCellValueFactory(new PropertyValueFactory<Emplacement,String>("type_emplacement"));
@@ -176,7 +174,7 @@ public class BackEmplacementFXMLController implements Initializable {
         }
         
         } catch (SQLException ex) {
-            Logger.getLogger(ListEmplacementsController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackEmplacementFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
             idColl.setCellValueFactory(new PropertyValueFactory<Emplacement,Integer>("id_emplacement"));
             vueColl.setCellValueFactory(new PropertyValueFactory<Emplacement,String>("type_emplacement"));
@@ -320,7 +318,7 @@ public class BackEmplacementFXMLController implements Initializable {
         }
         
         } catch (SQLException ex) {
-            Logger.getLogger(ListEmplacementsController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackEmplacementFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
             
             vueColl.setCellValueFactory(new PropertyValueFactory<Emplacement,String>("type_emplacement"));

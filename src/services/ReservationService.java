@@ -86,7 +86,7 @@ public class ReservationService implements IReservation<Reservation> {
      public List<Reservation> RechercherReservation(String x) {
         ArrayList<Reservation> List = new ArrayList<>();
         try {
-            String req = "Select * from reservation where  date_resv like '%" + x + "%'  ";
+            String req = "Select * from reservation where  date_resv like '%" + x + "%' or  email_resv like '%" + x + "%'";
             System.out.println("aa: "+x);
        PreparedStatement pre = connexion.prepareStatement(req);
 

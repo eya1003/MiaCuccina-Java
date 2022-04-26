@@ -13,6 +13,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
@@ -132,6 +133,14 @@ public class BackModifierEmplacementFXMLController implements Initializable {
 
     @FXML
     private void clean(MouseEvent event) {
+         tvuemodif.setText(null);
+        tdescriptionmodif.setText(null);
+    }
+
+    @FXML
+    private void close(MouseEvent event) {
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
     
 }

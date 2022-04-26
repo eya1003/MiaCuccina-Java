@@ -5,7 +5,6 @@
  */
 package gui.back;
 
-import gui.ListReservationController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,7 +45,7 @@ public class AllFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AllFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -60,7 +59,7 @@ public class AllFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackTableFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -74,7 +73,7 @@ public class AllFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackEmplacementFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @FXML
@@ -87,7 +86,7 @@ public class AllFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackReservationFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -101,7 +100,7 @@ public class AllFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -115,7 +114,7 @@ public class AllFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+          //  Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -129,7 +128,7 @@ public class AllFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -143,7 +142,7 @@ public class AllFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+          //  Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -157,7 +156,7 @@ public class AllFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -171,7 +170,7 @@ public class AllFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -185,7 +184,7 @@ public class AllFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -7,8 +7,6 @@ package gui.back;
 
 import entities.Emplacement;
 import entities.Table;
-import gui.ListReservationController;
-import gui.ListTablesController;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -32,6 +30,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -78,7 +77,7 @@ public class BackTableFXMLController implements Initializable {
         }
         
         } catch (SQLException ex) {
-            Logger.getLogger(ListTablesController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackTableFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
             idColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("id_tab"));
             vueColl1.setCellValueFactory(new PropertyValueFactory<Emplacement,String>("emp"));
@@ -271,7 +270,7 @@ public class BackTableFXMLController implements Initializable {
         }
         
         } catch (SQLException ex) {
-            Logger.getLogger(ListTablesController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackTableFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
                idColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("id_tab"));
             vueColl1.setCellValueFactory(new PropertyValueFactory<Emplacement,String>("emp"));
@@ -280,8 +279,15 @@ public class BackTableFXMLController implements Initializable {
             tabletable.setItems(table);
     }
 
-    @FXML
     private void search(MouseEvent event) {
+        TableService ms = new TableService();
+        ObservableList<Table> liste = FXCollections.observableArrayList(ms.RechercherTable(tfsearch.getText()));
+        
+         idColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("id_tab"));
+            vueColl1.setCellValueFactory(new PropertyValueFactory<Emplacement,String>("emp"));
+            nbChaiseColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("nb_chaise_tab"));   
+            stockcoll.setCellValueFactory(new PropertyValueFactory<Table,Integer>("stock_tab"));
+            tabletable.setItems(table);
       
     }
 
@@ -297,6 +303,10 @@ public class BackTableFXMLController implements Initializable {
             nbChaiseColl.setCellValueFactory(new PropertyValueFactory<Table,Integer>("nb_chaise_tab"));   
             stockcoll.setCellValueFactory(new PropertyValueFactory<Table,Integer>("stock_tab"));
             tabletable.setItems(liste);
+    }
+
+    @FXML
+    private void search(KeyEvent event) {
     }
     
 }

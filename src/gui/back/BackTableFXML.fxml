@@ -234,7 +234,7 @@
       </Button>
       <VBox layoutX="253.0" layoutY="62.0" prefHeight="106.0" prefWidth="135.0">
          <children>
-            <TextField fx:id="tfsearch" prefHeight="30.0" prefWidth="140.0" promptText="type here to search" stylesheets="@../../Values/style.css">
+            <TextField fx:id="tfsearch" onKeyPressed="#search" prefHeight="30.0" prefWidth="140.0" promptText="type here to search" stylesheets="@../../Values/style.css">
                <styleClass>
                   <String fx:value="search-box" />
                   <String fx:value="shadow" />
@@ -244,17 +244,6 @@
                   <Insets />
                </VBox.margin>
             </TextField>
-            <Button mnemonicParsing="false" onMouseClicked="#search" prefHeight="35.0" prefWidth="78.0" stylesheets="@../../Values/style.css" text="Search">
-               <styleClass>
-                  <String fx:value="add-btn" />
-                  <String fx:value="shadow" />
-                  <String fx:value="increment-button" />
-                  <String fx:value="search-box" />
-               </styleClass>
-               <VBox.margin>
-                  <Insets left="50.0" top="20.0" />
-               </VBox.margin>
-            </Button>
          </children>
       </VBox>
       <Button layoutX="741.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#triii" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier">

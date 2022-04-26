@@ -13,6 +13,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.data.jdbc.JDBCCategoryDataset;
 import utils.MyDB;
 
 /**
@@ -23,26 +30,24 @@ import utils.MyDB;
 public class StatistiqueTableFXMLController implements Initializable {
 
     @FXML
-    private BarChart<String, Integer> BarChart;
+    private BarChart BarChart;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+      String dataa= "SELECT stock_tab, nb_chaise_tab FROM table";
+      Connection con = MyDB.getInstance().getConnexion();
+        JDBCCategoryDataset dataset= new  JDBCCategoryDataset(con);
+        JFreeChart chart =ChartFactory.createLineChart("Query chart", "stock_tab", "nb_chaise_tab", dataset, PlotOrientation.VERTICAL, false, true, true);
+        BarRenderer render=null;
+        CategoryPlot plot = null;
+        render = new BarRenderer();
+        ChartFrame frame = new ChartFrame("query chart", chart);
         
-        // TODO
-         String query = "SELECT phone_resv,email_resv FROM reservation ";
-        XYChart.Series<String, Integer> series = new XYChart.Series<>();
-        try {
-            Connection con = MyDB.getInstance().getConnexion();
-            ResultSet rs = con.createStatement().executeQuery(query);
-            while (rs.next()) {
-                series.getData().add(new XYChart.Data<>(rs.getString("email_resv").toString(), rs.getInt("phone_resv")));
-            }
-            BarChart.getData().add(series);
-        } catch (Exception e) {
-        }
+        frame.setVisible(true);
+        frame.setSize(400, 600);
     }    
     
 }

@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import utils.MyDB;
 
 /**
@@ -87,4 +88,35 @@ public class TableService implements ITable<Table>{
         }
         return List;
     }
+ 
+  public List<Table> RechercherTable(String x) {
+        ArrayList<Table> List = new ArrayList<>();
+        try {
+String req = "Select * from table where  stock_tab like '%" + x + "%'  ";        
+System.out.println("aa: "+x);
+       PreparedStatement pre = connexion.prepareStatement(req);
+
+            ResultSet rs = pre.executeQuery(req);
+                while (rs.next()) {
+                 Table m = new Table();
+
+                m.setId_tab(rs.getInt("id_tab"));
+                m.setEmp(rs.getString("emp"));
+                m.setNb_chaise_tab(rs.getInt("nb_chaise_tab"));
+                m.setStock_tab(rs.getInt("stock_tab"));
+             
+                    List.add(m);
+                }
+
+           
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        if (List.isEmpty()) {
+            System.out.println("NOT FOUND");
+        }
+        return List;
+    }
+   
 }

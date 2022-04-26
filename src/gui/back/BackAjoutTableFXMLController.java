@@ -6,7 +6,6 @@
 package gui.back;
 
 import entities.Table;
-import gui.ListReservationController;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -68,7 +67,7 @@ public class BackAjoutTableFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AllFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -82,7 +81,7 @@ public class BackAjoutTableFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackTableFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -96,7 +95,7 @@ public class BackAjoutTableFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackEmplacementFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @FXML
@@ -109,7 +108,7 @@ public class BackAjoutTableFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BackReservationFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -123,7 +122,7 @@ public class BackAjoutTableFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -137,7 +136,7 @@ public class BackAjoutTableFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+          //  Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -151,7 +150,7 @@ public class BackAjoutTableFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -165,7 +164,7 @@ public class BackAjoutTableFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+          //  Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -179,7 +178,7 @@ public class BackAjoutTableFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -193,7 +192,7 @@ public class BackAjoutTableFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -207,9 +206,10 @@ public class BackAjoutTableFXMLController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
 
     
 
@@ -219,9 +219,6 @@ public class BackAjoutTableFXMLController implements Initializable {
         stage.close();
     }
 
-    @FXML
-    private void btnListecategorie(MouseEvent event) {
-    }
 
     @FXML
     private void save(MouseEvent event) {
@@ -265,6 +262,7 @@ public class BackAjoutTableFXMLController implements Initializable {
                             .hideAfter(Duration.seconds(10))
                             .position(Pos.TOP_RIGHT)
                             .onAction( new EventHandler<ActionEvent>() {
+                 @Override
                  public void handle(ActionEvent event){
                      System.out.println("Clicked on notif");
                  }
@@ -281,6 +279,20 @@ public class BackAjoutTableFXMLController implements Initializable {
          tfStock.setText(null);
         tfnbChaises.setText(null);
         tfEmplacement.setText(null);
+    }
+
+    @FXML
+    private void btnListeCategorie(MouseEvent event) {
+         try {
+            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+         //   Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
