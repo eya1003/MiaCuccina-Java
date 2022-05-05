@@ -131,17 +131,34 @@
 .dark-blue Text {
     -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.9) , 1, 0.0 , 0 , 1 );
 }
-.text-field{
-    -fx-background-color: #333333;
-    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
-    -fx-text-fill: white; 
-    -fx-prompt-text-fill: white;
-    -fx-font-family: Trebuchet MS;
-    -fx-font-size: 14px;
+
+.my-button {
+    -fx-background-color:transparent ;
+    -fx-border-width: 2; 
+    cursor: pointer; 
 }
 
-.text-field:focused{
-    -fx-focus-color: white;
-    -fx-prompt-text-fill: white;
-    -fx-highlight-fill:  grey ;
+/* I want MouseMoved button background-color effect 鼠标移入 */
+.my-button:hover {
+    -fx-background-color: #c2edea; 
 }
+
+.my-button:pressed {
+    -fx-background-color: #d3edeb; /* maybe some other color */
+}
+
+.side {
+    -fx-background-color: #39B8E3 ;
+    -fx-border-width: 2; 
+    cursor: pointer; 
+}
+
+/* I want MouseMoved button background-color effect 鼠标移入 */
+.side:hover {
+    -fx-background-color: #c2edea; 
+}
+
+.side:pressed {
+    -fx-background-color: #d3edeb; /* maybe some other color */
+}
+
