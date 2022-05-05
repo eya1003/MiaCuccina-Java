@@ -217,9 +217,6 @@ public class BackAjoutEmplacementController implements Initializable {
         stage.close();
     }
 
-    @FXML
-    private void btnListecategorie(MouseEvent event) {
-    }
 
  
     
@@ -276,6 +273,10 @@ public class BackAjoutEmplacementController implements Initializable {
     private void clean(MouseEvent event) {
         tvue.setText(null);
         tdescription.setText(null);
+    }
+
+    @FXML
+    private void btnListeCategorie(MouseEvent event) {
     }
     
 }

@@ -302,6 +302,7 @@ public class BackEmplacementFXMLController implements Initializable {
     private void btnListeCategorie(MouseEvent event) {
     }
 
+      @FXML
     private void btnAjouter(MouseEvent event) {
          try {
             Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/BackAjoutEmplacement.fxml"));
@@ -336,7 +337,6 @@ public class BackEmplacementFXMLController implements Initializable {
             
     }
 
-    @FXML
     private void getadd(MouseEvent event) {
         try {
             Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/BackAjoutEmplacement.fxml"));

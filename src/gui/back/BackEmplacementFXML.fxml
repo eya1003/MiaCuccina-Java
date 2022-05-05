@@ -218,7 +218,7 @@
       <VBox layoutX="286.0" layoutY="492.0" prefHeight="98.0" prefWidth="466.0" />
       <Button layoutX="783.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#btnrefresh" prefHeight="16.0" prefWidth="59.0" styleClass="my-button" stylesheets="@../../Values/style.css">
          <graphic>
-            <ImageView fitHeight="92.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="92.0" fitWidth="41.0" onMouseClicked="#btnrefresh" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/refresh.png" />
                </image>
@@ -227,7 +227,7 @@
       </Button>
       <Button layoutX="725.0" layoutY="119.0" mnemonicParsing="false" onMouseClicked="#stat" prefHeight="60.0" prefWidth="105.0" styleClass="my-button" stylesheets="@../../Values/style.css">
          <graphic>
-            <ImageView fitHeight="52.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="52.0" fitWidth="53.0" onMouseClicked="#stat" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/statistiques.png" />
                </image>
@@ -236,7 +236,7 @@
       </Button>
       <VBox layoutX="50.0" layoutY="90.0" prefHeight="89.0" prefWidth="446.0">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#getadd" prefHeight="68.0" prefWidth="125.0" styleClass="my-button" stylesheets="@../../Values/style.css">
+            <Button mnemonicParsing="false" onMouseClicked="#btnAjouter" prefHeight="68.0" prefWidth="125.0" styleClass="my-button" stylesheets="@../../Values/style.css">
                <VBox.margin>
                   <Insets left="180.0" top="20.0" />
                </VBox.margin>

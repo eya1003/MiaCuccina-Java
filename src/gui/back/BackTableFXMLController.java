@@ -60,7 +60,6 @@ public class BackTableFXMLController implements Initializable {
     @FXML
     private TableColumn<Table, Integer> stockcoll;
     ObservableList<Table> table = FXCollections.observableArrayList();
-    @FXML
     private TextField tfsearch;
 
     /**
@@ -245,7 +244,6 @@ public class BackTableFXMLController implements Initializable {
     private void btnListeCategorie(MouseEvent event) {
     }
 
-    @FXML
     private void getadd(MouseEvent event) {
          try {
              Parent parent = FXMLLoader.load(getClass().getResource("/gui/back/BackAjoutTableFXML.fxml"));
@@ -328,7 +326,17 @@ public class BackTableFXMLController implements Initializable {
     }
 
     @FXML
-    private void search(KeyEvent event) {
+    private void btnAjouter(MouseEvent event) {
+        try {
+             Parent parent = FXMLLoader.load(getClass().getResource("/gui/back/BackAjoutTableFXML.fxml"));
+             Scene scene = new Scene(parent);
+             Stage stage = new  Stage();
+             stage.setScene(scene);
+             stage.initStyle(StageStyle.UTILITY);
+             stage.show();
+         } catch (IOException ex) {
+             Logger.getLogger(BackAjoutTableFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }
     
 }

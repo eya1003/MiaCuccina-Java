@@ -247,7 +247,7 @@
          <children>
             <Button mnemonicParsing="false" onMouseClicked="#save" prefHeight="57.0" prefWidth="111.0" styleClass="my-button" stylesheets="@../../Values/style.css">
                <graphic>
-                  <ImageView fitHeight="58.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="58.0" fitWidth="57.0" onMouseClicked="#save" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../img/diskette.png" />
                      </image>
@@ -257,7 +257,7 @@
             <Pane prefHeight="100.0" prefWidth="31.0" />
             <Button mnemonicParsing="false" onMouseClicked="#clean" prefHeight="59.0" prefWidth="101.0" styleClass="my-button" stylesheets="@../../Values/style.css">
                <graphic>
-                  <ImageView fitHeight="64.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="64.0" fitWidth="69.0" onMouseClicked="#clean" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../img/cleaning.png" />
                      </image>

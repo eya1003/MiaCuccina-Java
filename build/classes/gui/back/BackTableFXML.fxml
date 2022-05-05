@@ -203,12 +203,12 @@
       </VBox>
       <Pane layoutX="220.0" layoutY="47.0" prefHeight="5.0" prefWidth="630.0" style="-fx-background-color: #39B8E3;" AnchorPane.bottomAnchor="580.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0" />
       <Button layoutX="812.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#close" styleClass="add-btn" stylesheets="@../../Values/style.css" text="X" />
-      <Text fontSmoothingType="LCD" layoutX="404.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des tables" textAlignment="CENTER" wrappingWidth="359.41796875">
+      <Text fontSmoothingType="LCD" layoutX="355.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des tables" textAlignment="CENTER" wrappingWidth="359.41796875">
          <font>
             <Font name="Segoe Print Bold" size="42.0" />
          </font>
       </Text>
-      <TableView fx:id="tabletable" layoutX="253.0" layoutY="186.0" prefHeight="302.0" prefWidth="590.0" stylesheets="@../../Values/style.css">
+      <TableView fx:id="tabletable" layoutX="253.0" layoutY="226.0" prefHeight="302.0" prefWidth="590.0" stylesheets="@../../Values/style.css">
          <columns>
             <TableColumn fx:id="idColl" maxWidth="200.0" prefWidth="50.0" style="-fx-alignment: center;" text="Id" />
             <TableColumn fx:id="vueColl1" maxWidth="300.0" prefWidth="100.0" style="-fx-alignment: center;" text="Vue" />
@@ -217,38 +217,44 @@
             <TableColumn fx:id="actionsColl1" maxWidth="200.0" prefWidth="200.0" style="-fx-alignment: center;" text="Actions" />
          </columns>
       </TableView>
-      <Button layoutX="449.0" layoutY="557.0" mnemonicParsing="false" onMouseClicked="#getadd" prefHeight="43.0" prefWidth="135.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="AJOUTER">
+      <VBox layoutX="253.0" layoutY="62.0" prefHeight="106.0" prefWidth="135.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#btnAjouter" prefHeight="13.0" prefWidth="125.0" styleClass="my-button" stylesheets="@../../Values/style.css">
+               <graphic>
+                  <ImageView fitHeight="73.0" fitWidth="54.0" onMouseClicked="#btnAjouter" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children></VBox>
+      <Button layoutX="496.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#triii" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Stock">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="shadow" />
          </styleClass>
       </Button>
-      <Button layoutX="795.0" layoutY="62.0" mnemonicParsing="false" onMouseClicked="#btnrefresh" prefHeight="16.0" prefWidth="59.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Refresh">
-         <styleClass>
-            <String fx:value="decrement-button" />
-            <String fx:value="shadow" />
-            <String fx:value="right-bar" />
-            <String fx:value="add-btn" />
-         </styleClass>
-      </Button>
-      <VBox layoutX="253.0" layoutY="62.0" prefHeight="106.0" prefWidth="135.0" />
-      <Button layoutX="735.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#triii" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Stock">
+      <Button layoutX="620.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#triiiChaise" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Chaises">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="shadow" />
          </styleClass>
       </Button>
-      <Button layoutX="735.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#triiiChaise" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Chaises">
+      <Button layoutX="735.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#triiiId" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Id">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="shadow" />
          </styleClass>
       </Button>
-      <Button layoutX="630.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#triiiId" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #39B8E3;" stylesheets="@../../Values/style.css" text="Trier Id">
-         <styleClass>
-            <String fx:value="search-button" />
-            <String fx:value="shadow" />
-         </styleClass>
+      <Button layoutX="793.0" layoutY="66.0" mnemonicParsing="false" onMouseClicked="#btnrefresh" prefHeight="16.0" prefWidth="59.0" styleClass="my-button" stylesheets="@../../Values/style.css">
+         <graphic>
+            <ImageView fitHeight="92.0" fitWidth="41.0" onMouseClicked="#btnrefresh" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/refresh.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>
