@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="574.0" prefWidth="1061.0" style="-fx-background-image: C:\Users\DELL\Desktop\Pictures;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="event.FXMLDocumentController">
+   <children>
+      <ImageView fitHeight="629.0" fitWidth="1061.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/background.PNG" />
+         </image>
+      </ImageView>
+      <Button fx:id="EvenementBtn" layoutX="274.0" layoutY="28.0" mnemonicParsing="false" onAction="#EventScene" prefHeight="35.0" prefWidth="298.0" text="Evenements" />
+      <Button fx:id="ArtisteeBtn" layoutX="593.0" layoutY="28.0" mnemonicParsing="false" onAction="#ArtisteeScene" prefHeight="35.0" prefWidth="345.0" text="Artistes" />
+   </children>
+</AnchorPane>
