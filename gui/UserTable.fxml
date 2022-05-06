@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1111.0" style="-fx-background-color: #e9dee6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Eya.UserTableController">
+   <children>
+      <TableView fx:id="usersTables" layoutY="117.0" prefHeight="287.0" prefWidth="1077.0" style="-fx-background-color: #c25009;">
+        <columns>
+          <TableColumn fx:id="colid" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colusername" prefWidth="75.0" text="UserName" />
+           
+           
+            <TableColumn fx:id="collocalisation" prefWidth="75.0" text="Localisation" />
+            <TableColumn fx:id="colimages" prefWidth="75.0" text="Images" />
+            <TableColumn fx:id="colnumero" prefWidth="75.0" text="Numero" />
+            <TableColumn fx:id="colemail" prefWidth="75.0" text="Email" />
+           
+            <TableColumn fx:id="colrole" prefWidth="75.0" text="Role" />
+           
+            <TableColumn fx:id="colpassword" prefWidth="75.0" text="Password" />
+            <TableColumn fx:id="editCol" maxWidth="91.0" prefWidth="91.0" style="-fx-alignment: center;" text="Action" />
+        </columns>
+      </TableView>
+      <FontAwesomeIconView fill="#c25009" glyphName="" layoutX="27.0" layoutY="78.0" onMouseClicked="#getAddJOBSEEKERView" size="45" styleClass="btn" text="" />
+      <FontAwesomeIconView glyphName="REFRESH" layoutX="249.0" layoutY="78.0" onMouseClicked="#refreshTable" size="45" styleClass="btn" text="!" />
+      <FontAwesomeIconView fill="#455a64" glyphName="AT" layoutX="188.0" layoutY="78.0" onMouseClicked="#EMAIL" size="45" styleClass="btn" />
+      <HBox alignment="CENTER_LEFT" layoutX="490.0" layoutY="16.0" prefHeight="46.0" prefWidth="578.0" style="-fx-border-color: black; -fx-background-color: #e9dee6;">
+         <children>
+            <Text fill="#c25009" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashbord user" wrappingWidth="301.515625">
+               <font>
+                  <Font name="Bauhaus 93" size="32.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Text>
+            <FontAwesomeIconView fill="#c25009" glyphName="USER" size="2.5em" />
+         </children>
+      </HBox>
+      <FontAwesomeIconView fill="#c25009" glyphName="HOME" layoutX="96.0" layoutY="78.0" onMouseClicked="#getAddCompanyView" size="45" />
+      <Text layoutX="15.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visiteur" wrappingWidth="72.9209133386612">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="106.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="804.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recherche " />
+      <TextField fx:id="searchtf" layoutX="874.0" layoutY="72.0" />
+   </children>
+</AnchorPane>

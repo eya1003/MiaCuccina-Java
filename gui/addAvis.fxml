@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="684.0" style="-fx-background-color: #e9dee6;" styleClass="btn" stylesheets="@../loggingfx/tableview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Eya.AddSAvisController">
+   <children>
+      <HBox prefHeight="70.0" prefWidth="668.0" style="-fx-border-color: black;">
+         <children>
+            <Text fill="#c25009" strokeType="OUTSIDE" strokeWidth="0.0" text="        Consulter Avis" wrappingWidth="469.390625">
+               <font>
+                  <Font name="Bauhaus 93" size="32.0" />
+               </font>
+            </Text>
+            <Rating fx:id="rating" prefHeight="68.0" prefWidth="246.0" rating="0.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="309.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="emailFld" focusColor="#e9dee6" prefHeight="25.0" prefWidth="358.0">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </JFXTextField>
+         </children>
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+      </HBox>
+      <Label fx:id="erromessage" prefHeight="17.0" prefWidth="226.0" textFill="#c60000" />
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="64.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="387.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Text>
+            <JFXDatePicker fx:id="dateFld" prefHeight="25.0" prefWidth="281.0" />
+         </children>
+         <VBox.margin>
+            <Insets top="17.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="89.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Objet" wrappingWidth="305.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="objetFld" prefHeight="25.0" prefWidth="358.0">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </JFXTextField>
+         </children>
+         <VBox.margin>
+            <Insets top="17.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="114.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contenu" wrappingWidth="300.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="contenuFld" prefHeight="25.0" prefWidth="358.0">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </JFXTextField>
+         </children>
+         <VBox.margin>
+            <Insets top="17.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="58.0" prefWidth="355.0">
+         <VBox.margin>
+            <Insets top="25.0" />
+         </VBox.margin>
+         <children>
+            <JFXButton onMouseClicked="#save" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: #c25009;" styleClass="btn" text="Save">
+               <HBox.margin>
+                  <Insets right="8.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Century Gothic" size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="132.0" layoutY="19.0" onMouseClicked="#clean" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: black;" styleClass="btn" text="Clean">
+               <HBox.margin>
+                  <Insets left="8.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Century Gothic" size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+</VBox>
