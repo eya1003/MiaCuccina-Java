@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="gui.Mapa">
+   <children>
+      <WebView fx:id="maps" layoutY="67.0" prefHeight="542.0" prefWidth="1383.0" />
+      <ImageView fitHeight="41.0" fitWidth="109.0" layoutX="16.0" layoutY="12.0" onMouseClicked="#retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/style/left.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="355.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Map" wrappingWidth="156.41015625">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="63.0" fitWidth="77.0" layoutX="441.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/style/street-map.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

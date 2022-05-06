@@ -1,0 +1,187 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.beta{
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    
+}
+.Evenemets{
+
+    -fx-text-fill: #707070;
+    -fx-cursor:hand;
+    
+}
+.Evenemets:hover{
+    -fx-text-fill: #4A48FF;
+    -fx-border-width:0px 0px 1px 0px ;   
+      -fx-border-color: #4A48FF;
+
+}
+.logo{
+-fx-effect: dropshadow(three-pass-box, rgb(2,0,252,0.5), 10, 0, 0, 0);
+}
+
+.user{
+    -fx-background-radius:  20px;
+}
+.top{
+        -fx-border-width:0.5px 0px 2px 0px ;  
+        -fx-border-color: rgba(0,0,0,0.1);
+}
+
+.imagesPanier{
+    -fx-border-width:0.5px 0.6px 0.7px 0.5px ;  
+      -fx-border-color: rgba(0,0,0,0.6);
+      -fx-cursor:hand;
+}
+.menuButton:hover{
+    
+    -fx-background-color: rgba(0,0,0,0.03);
+}
+.menuButton2:hover{
+    -fx-text-fill: #4A48FF;
+}
+.dividorPane{
+       -fx-border-width:0px 0px 2px 0px ;  
+        -fx-border-color: rgba(0,0,0,0.1);
+}
+.MesEvenementsButton:hover{
+        -fx-background-color: rgba(0,0,0,0.03);
+}
+
+.banner{
+ 
+
+}
+.visiterSiteEnLigne{
+        -fx-border-radius:  15px;
+        -fx-border-color:  white;
+        -fx-border-width:1px 1px 1px 1px ;  
+
+}
+.EvenementSingle{
+    -fx-effect: dropshadow(three-pass-box, rgb(2,0,252,0.7), 10, 0, 0, 0);
+    -fx-background-radius:6px;
+
+
+}
+.Sidebar{
+    -fx-border-width:0px 0px 0px 0.5px ;  
+    -fx-border-color: rgba(0,0,0,0.1);
+
+
+}
+.CenterContent{
+    -fx-border-width:0px 0px 0px 0px ;  
+        -fx-border-color: rgba(0,255,0,1);
+
+}
+.focus{
+        -fx-effect: dropshadow(three-pass-box, rgb(2,0,252,0.7), 10, 0, 0, 0);
+
+}
+.image-view-wrapper:border {
+    -fx-border-color: black;
+    -fx-border-style: solid;
+    -fx-border-width: 5;
+}
+#panierView .table-column {
+  -fx-alignment: CENTER;
+}
+.table-view {
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom,  #e0643a, white );
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  linear-gradient(to bottom,  #ff9966,#e0643a);
+}
+
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  linear-gradient(to right, #ff9966,#e0643a);
+}
+.table-row-cell:highlighted {
+    -fx-background-color: #e0643a;
+    -fx-background-radius: 15px;
+}
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+
+.table-row-cell:hover {
+    -fx-background-color:  #e0643a;
+    -fx-text-background-color: white;
+}
+
+.table-row-cell:odd{
+    -fx-background-color:  #e0643a;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:even{
+    -fx-background-color: #1dbbdd11;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.dark-blue {
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12px;
+    -fx-padding: 10 20 10 20;
+}
+.dark-blue Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.9) , 1, 0.0 , 0 , 1 );
+}
+
+.side {
+    -fx-background-color: #B42506 ;
+    -fx-border-width: 2; 
+    cursor: pointer; 
+}
+
+/* I want MouseMoved button background-color effect 鼠标移入 */
+.side:hover {
+    -fx-background-color: #e3411e; 
+}
+
+.side:pressed {
+    -fx-background-color: #e05f43; /* maybe some other color */
+}
