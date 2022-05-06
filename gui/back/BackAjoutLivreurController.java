@@ -223,7 +223,6 @@ public class BackAjoutLivreurController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Succes");
             alert.setContentText("Livreur ajoutée");
-           NotificationH.NotifcationOnAction("Envoie d'ajout ", "Livreur ajouté");
             alert.show();
             tnom.setText("");
             tprenom.setText("");

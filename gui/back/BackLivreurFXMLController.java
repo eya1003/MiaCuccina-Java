@@ -100,6 +100,33 @@ public class BackLivreurFXMLController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        try {
+            
+           Connection con = MyDB.getInstance().getConnexion();
+            livreurListe.clear();
+        ResultSet rs = con.createStatement().executeQuery("SELECT * FROM livreur");
+        while(rs.next()){
+         livreurListe.add(new Livreur(rs.getInt("id_livreur"),rs.getString("nom_liv"),rs.getString("prenom_liv"),rs.getString("num_tel_liv"),rs.getString("Region"),rs.getString("mat_liv"),rs.getString("disponibilite_liv")));
+        }
+        
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+            ObservableList<Livreur> livreurs;
+        try {
+            livreurs = new LivreurService().getAll();
+        
+            id_livreur.setCellValueFactory(new PropertyValueFactory<>("id_livreur"));
+            Nom.setCellValueFactory(new PropertyValueFactory<>("nom_liv"));
+            Prenom.setCellValueFactory(new PropertyValueFactory<>("prenom_liv"));
+            numtel.setCellValueFactory(new PropertyValueFactory<>("num_tel_liv"));
+            Region.setCellValueFactory(new PropertyValueFactory<>("Region"));
+            Matricule.setCellValueFactory(new PropertyValueFactory<>("mat_liv"));
+            Dispo.setCellValueFactory(new PropertyValueFactory<>("disponibilite_liv"));
+            tableViewlivreur.setItems(livreurs);
+            } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
         removeBtn.setOnMouseClicked(event -> {
                            try{ 
                                Livreur livreur = (Livreur) tableViewlivreur.getSelectionModel().getSelectedItem();

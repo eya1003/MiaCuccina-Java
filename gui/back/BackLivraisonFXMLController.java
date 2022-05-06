@@ -90,6 +90,32 @@ public class BackLivraisonFXMLController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        try {
+            
+           Connection con = MyDB.getInstance().getConnexion();
+            livraisonListe.clear();
+        ResultSet rs = con.createStatement().executeQuery("SELECT * FROM livraison");
+        while(rs.next()){
+            livraisonListe.add(new Livraison(rs.getInt("id_livraison"),rs.getString("description_livraison"),rs.getString("Adresse_livraison"),rs.getInt("etat_livraison")));
+        }
+        
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+            ObservableList<Livraison> livraisons;
+        try {
+            livraisons = new LivraisonService().getAll();
+        
+            
+            id_livraison.setCellValueFactory(new PropertyValueFactory<>("id_livraison"));
+            Description.setCellValueFactory(new PropertyValueFactory<>("description_livraison"));
+            Etat.setCellValueFactory(new PropertyValueFactory<>("etat_livraison"));
+//            id_livreur.setCellValueFactory(new PropertyValueFactory<>("id_livreur"));
+            Adresse.setCellValueFactory(new PropertyValueFactory<>("Adresse_livraison"));
+            tableViewlivraison.setItems(livraisons);
+            } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
        removeBtn.setOnMouseClicked(event -> {
                            try{ 
                                Livraison livraison = (Livraison) tableViewlivraison.getSelectionModel().getSelectedItem();

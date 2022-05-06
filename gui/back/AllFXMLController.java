@@ -193,14 +193,14 @@ public class AllFXMLController implements Initializable {
     @FXML
     private void btnListeLivreur(MouseEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/BackLivreurFXML.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-           // Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(BackLivreurFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
