@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.back.Cat1Controller">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="-11.0" prefHeight="584.0" prefWidth="789.0">
+         <children>
+            <VBox layoutY="-2.0" prefHeight="608.0" prefWidth="217.0">
+               <children>
+                  <VBox prefHeight="632.0" prefWidth="235.0" style="-fx-background-color: #39B8E3;">
+                     <children>
+                        <ImageView fitHeight="108.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="-10.0" left="50.0" right="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../../img/logo3.png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onMouseClicked="#btndashboardd" prefHeight="6.0" prefWidth="169.0" style="-fx-background-color: #39B8E3;" text="Dashboard" textFill="#fcfcfc">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/55003.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets right="75.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#btnListeTable" prefHeight="44.0" prefWidth="153.0" style="-fx-background-color: #39B8E3;" text="Liste Tables " textFill="#fcfcfc">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/1663834.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="-5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#btnListeEpmlacement" prefHeight="44.0" prefWidth="168.0" style="-fx-background-color: #39B8E3;" text="Liste Emplacement" textFill="#fcfcfc">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/535239.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#btnListeReservation" prefHeight="44.0" prefWidth="168.0" style="-fx-background-color: #39B8E3;" text="Liste Reservations " textFill="#fcfcfc">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/2636428.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets right="46.0" top="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#btnlListeEvent" prefHeight="44.0" prefWidth="157.0" style="-fx-background-color: #39B8E3;" text="Liste Evenements" textFill="#fcfcfc">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/event.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets right="50.0" top="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#btnListePanier" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #39B8E3;" text="Liste Panier" textFill="#fcfcfc">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/118089.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets right="90.0" top="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="11.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#btnListeCommandes" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #39B8E3;" text="Liste Commandes" textFill="#fcfcfc">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/2649297.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets right="50.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseClicked="#btnListecategorie" prefHeight="40.0" prefWidth="124.0" style="-fx-background-color: #39B8E3;" text="Liste produit" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/1474613.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#btnListeProduit" prefHeight="39.0" prefWidth="170.0" style="-fx-background-color: #39B8E3;" text="Liste categories" textFill="#fcfcfc">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/1474613.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets right="65.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#btnListeLivreur" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #39B8E3;" text="Liste Livreur" textFill="#fcfcfc">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/png-Delivery-Boy-Icon-Png-Delivery-Icon-Png-motorcycle-icon_thumbnail.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets right="70.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#btnListeLivraison" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #39B8E3;" text="Liste Livraison" textFill="#fcfcfc">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/png-Delivery-Boy-Icon-Png-Delivery-Icon-Png-motorcycle-icon_thumbnail.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets right="65.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#btnListeUser" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #39B8E3;" text="Liste Utilisateurs" textFill="#fcfcfc">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/1200px-User_font_awesome.svg.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets right="65.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <Pane layoutX="202.0" layoutY="10.0" prefHeight="3.0" prefWidth="533.0" style="-fx-background-color: #39B8E3;" AnchorPane.bottomAnchor="593.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
+            <Button layoutX="812.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#close" styleClass="add-btn" stylesheets="@../../Values/style.css" text="X" />
+            <Label layoutX="231.0" layoutY="79.0" prefHeight="17.0" prefWidth="100.0" text="Nom Catégorie" />
+            <Label layoutX="234.0" layoutY="122.0" prefHeight="17.0" prefWidth="118.0" text="Description Catégorie" />
+            <Button fx:id="bntadd" layoutX="642.0" layoutY="237.0" mnemonicParsing="false" onAction="#addCat" text="Ajouter" />
+            <Button fx:id="bntupd" layoutX="721.0" layoutY="237.0" mnemonicParsing="false" onAction="#modifier" text="Modifier" />
+            <TextField fx:id="tfnomcat" layoutX="378.0" layoutY="75.0" />
+            <TextField fx:id="tfdesccat" layoutX="378.0" layoutY="118.0" />
+            <Label layoutX="429.0" layoutY="461.0" prefHeight="17.0" prefWidth="48.0" text="Dinner" />
+            <Label layoutX="233.0" layoutY="461.0" prefHeight="17.0" prefWidth="55.0" text="Lunch" />
+            <Label layoutX="240.0" layoutY="373.0" prefHeight="17.0" prefWidth="41.0" text="Start" />
+            <Label layoutX="486.0" layoutY="373.0" prefHeight="17.0" prefWidth="41.0" text="Drinks" />
+            <Label layoutX="630.0" layoutY="461.0" prefHeight="17.0" prefWidth="55.0" text="Dessert" />
+            <ImageView fitHeight="97.0" fitWidth="100.0" layoutX="299.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../OneDrive/Documents/MiaCuccina-Java/src/img/starts.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="97.0" fitWidth="135.0" layoutX="535.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../OneDrive/Documents/MiaCuccina-Java/src/img/drnks.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="142.0" layoutX="260.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../OneDrive/Documents/MiaCuccina-Java/src/img/lunch.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="88.0" fitWidth="124.0" layoutX="446.0" layoutY="488.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../OneDrive/Documents/MiaCuccina-Java/src/img/dinner.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="97.0" fitWidth="135.0" layoutX="617.0" layoutY="486.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../OneDrive/Documents/MiaCuccina-Java/src/img/dessert.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

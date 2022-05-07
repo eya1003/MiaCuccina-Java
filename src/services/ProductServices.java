@@ -50,15 +50,16 @@ Connection cnx;
     }
     @Override
     public void ajouter1(Produit p) { 
-        String req = "INSERT INTO `produit`(`nom`, `prix_produit`,`description_produit`,`quantite_produit`,`photo_pro`,`like_dislike`) "
-                + "VALUES ( ?, ?,?, ?,?,"+1+")";
+        String req = "INSERT INTO `produit`(`id_categorie` , `nom`, `prix_produit`,`description_produit`,`quantite_produit`,`photo_pro`,`like_dislike`) "
+                + "VALUES ( ?,?, ?,?, ?,?,"+1+")";
         try {
-        PreparedStatement ps = cnx.prepareStatement(req);
-        ps.setString(1, p.getNom());
-        ps.setDouble(4, p.getQuantite_produit());
-        ps.setFloat(2, p.getPrix_produit());
-        ps.setString(3, p.getDescription_produit());
-        ps.setString(5, p.getPhoto_pro());
+        PreparedStatement ps = cnx.prepareStatement(req); 
+        ps.setInt(1, p.getId_categorie());
+        ps.setString(2, p.getNom());
+        ps.setDouble(5, p.getQuantite_produit());
+        ps.setFloat(3, p.getPrix_produit());
+        ps.setString(4, p.getDescription_produit());
+        ps.setString(6, p.getPhoto_pro());
      // ps.setInt(6,1);
         ps.executeUpdate();
         System.out.println("produit ajoutée !");
@@ -156,25 +157,18 @@ Connection cnx;
             while (rs.next()) {
                 Produit p = new Produit();
 
-               
-               
                 p.setNom(rs.getString("nom"));
                 p.setPrix_produit(rs.getFloat("prix_produit"));
                 p.setDescription_produit(rs.getString("description_produit"));
-                p.setPhoto_pro(rs.getString("photo_pro"));
-             
-               
-         
-
+                p.setPhoto_pro(rs.getString("photo_pro")); 
                 List.add(p);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
+        } 
         return List;
     }
    
-     
      public List<Produit> RechercherProduit (String x) {
         ArrayList<Produit> List = new ArrayList<>();
         try {
@@ -185,9 +179,7 @@ Connection cnx;
             ResultSet rs = pre.executeQuery(req);
                 while (rs.next()) {
                  Produit p = new Produit();
-
-               
-              
+                     
                p.setNom(rs.getString("nom"));
                 p.setPrix_produit(rs.getFloat("prix_produit"));
                 p.setDescription_produit(rs.getString("description_produit"));
@@ -197,7 +189,7 @@ Connection cnx;
                 } 
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-        }
+        } 
         if (List.isEmpty()) {
             System.out.println("NOT FOUND");
         }

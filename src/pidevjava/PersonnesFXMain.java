@@ -39,19 +39,18 @@ public class PersonnesFXMain extends Application {
     public void start(Stage primaryStage) {
        this.stage = primaryStage;
         try {
-            parent = FXMLLoader.load(getClass().getResource("/gui/back/AjoutProduit1.fxml"));
+            parent = FXMLLoader.load(getClass().getResource("/gui/back/StatCat.fxml"));
             Scene scene = new Scene(parent);
-          
+     
             stage.setTitle("Acceuil");
             stage.setScene(scene);
               primaryStage.initStyle(StageStyle.TRANSPARENT);
             stage.show();
-           
-           
+          
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-    }
+    } 
 
     /**
      * @param args the command line arguments

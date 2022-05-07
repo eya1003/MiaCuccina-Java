@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onMousePressed="#click" prefHeight="163.0" prefWidth="662.0" styleClass="linear-grad2" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.menu.Controller.ItemController">
+   <children>
+      <Label fx:id="nameLabel" layoutX="177.0" layoutY="67.0" prefHeight="49.0" prefWidth="149.0" text="Cherry">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceLable" layoutX="260.0" layoutY="69.0" prefHeight="49.0" prefWidth="101.0" text="\$0.99">
+         <font>
+            <Font name="Cambria Bold" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="img" fitHeight="110.0" fitWidth="133.0" layoutX="22.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/cherry.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="quantite" layoutX="429.0" layoutY="76.0" prefHeight="29.0" prefWidth="32.0" text="1" />
+      <Button layoutX="477.0" layoutY="76.0" mnemonicParsing="false" onAction="#plus" styleClass="butt" stylesheets="@../../../Values/Front.css">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/signe-plus.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="372.0" layoutY="75.0" mnemonicParsing="false" onAction="#moin" prefHeight="25.0" prefWidth="32.0" styleClass="butt" stylesheets="@../../../Values/Front.css">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/supprimer.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="548.0" layoutY="68.0" mnemonicParsing="false" styleClass="butt" stylesheets="@../../../Values/Front.css">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/poubelle.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@../values/style.css" />
+      <URL value="@../../../Values/Front.css" />
+   </stylesheets>
+</AnchorPane>

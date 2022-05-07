@@ -70,6 +70,8 @@ public class Menu1Controller implements Initializable {
     private TableColumn<Produit, String> desccol; 
      @FXML
     private TableColumn<Produit, String> imgccol;
+        @FXML
+    private TableColumn<Produit, String> catcol;
     @FXML
     private TextField srch;
     @FXML
@@ -80,17 +82,14 @@ public class Menu1Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-    
-
         try{  
             
         Connection cnx = MyDB.getInstance().getConnexion();
-        ResultSet rs = cnx.createStatement().executeQuery("SELECT * FROM produit");
+        ResultSet rs = cnx.createStatement().executeQuery("SELECT p.id_produit,p.id_categorie,p.nom,p.quantite_produit,p.prix_produit,p.description_produit,p.photo_pro,p.like_dislike,c.id_cat,c.nom_cat FROM produit p,`categorie` c where c.id_cat=p.id_categorie");
             
         while(rs.next()){
-        produitLIST.add(new Produit(rs.getString("nom"),rs.getFloat("prix_produit"),rs.getString("description_produit"),rs.getString("photo_pro")));
-        }
-        
+        produitLIST.add(new Produit(rs.getString("nom"),rs.getFloat("prix_produit"),rs.getString("description_produit"),rs.getString("photo_pro"),rs.getString("nom_cat")));
+        } 
         } catch (SQLException ex) {
             Logger.getLogger(MenuFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -98,8 +97,9 @@ public class Menu1Controller implements Initializable {
             nomcol.setCellValueFactory(new PropertyValueFactory<Produit,String>("nom"));
             prixcol.setCellValueFactory(new PropertyValueFactory<Produit,Float>("prix_produit")); 
             desccol.setCellValueFactory(new PropertyValueFactory<Produit,String>("Description_produit"));
-            imgccol.setCellValueFactory(new PropertyValueFactory<Produit,String>("photo_pro"));
-            menutable.setItems(produitLIST);
+            imgccol.setCellValueFactory(new PropertyValueFactory<Produit,String>("photo_pro")); 
+            catcol.setCellValueFactory(new PropertyValueFactory<Produit,String>("nom_cat")); 
+            menutable.setItems(produitLIST); 
         // TODO
     }    
 
@@ -216,7 +216,7 @@ public class Menu1Controller implements Initializable {
             prixcol.setCellValueFactory(new PropertyValueFactory<Produit,Float>("prix_produit")); 
             desccol.setCellValueFactory(new PropertyValueFactory<Produit,String>("Description_produit"));
             imgccol.setCellValueFactory(new PropertyValueFactory<Produit,String>("photo_pro"));
-            
+            catcol.setCellValueFactory(new PropertyValueFactory<Produit,String>("nom_cat"));
             menutable.setItems(produitLIST);
     }
 
@@ -230,7 +230,7 @@ public class Menu1Controller implements Initializable {
             prixcol.setCellValueFactory(new PropertyValueFactory<Produit,Float>("prix_produit")); 
             desccol.setCellValueFactory(new PropertyValueFactory<Produit,String>("Description_produit"));
             imgccol.setCellValueFactory(new PropertyValueFactory<Produit,String>("photo_pro"));
-            
+            catcol.setCellValueFactory(new PropertyValueFactory<Produit,String>("nom_cat"));
             menutable.setItems(produitLIST);
     }
     

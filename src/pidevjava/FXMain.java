@@ -30,7 +30,7 @@ public class FXMain extends Application {
     @Override
     public void start(Stage primaryStage) { 
         try { 
-         Parent parent = FXMLLoader.load(getClass().getResource("/gui/back/AjoutProduit1.fxml"));
+         Parent parent = FXMLLoader.load(getClass().getResource("/gui/back/Categorie.fxml"));
         //Parent parent = FXMLLoader.load(getClass().getResource("/gui/Produit/menu.fxml"));
             Scene scene = new Scene(parent);
             primaryStage.setScene(scene);

@@ -22,9 +22,10 @@ public class Produit {
    float prix_produit ; 
    String  description_produit ;
    String photo_pro;
-   int like_dislike;
+   int like_dislike;  
+   String nom_cat;
 
- public Produit(int id_produit, int id_categorie, String nom, Integer quantite_produit, float prix_produit, String description_produit, String photo_pro, int like_dislike) {
+ public Produit(int id_produit, int id_categorie, String nom, Double quantite_produit, float prix_produit, String description_produit, String photo_pro, int like_dislike) {
         this.id_produit = id_produit;
         this.id_categorie = id_categorie;
         this.nom = nom;
@@ -36,14 +37,46 @@ public class Produit {
     }
       public Produit() {
        
+    } 
+
+    public Produit(int id_produit, String nom, double quantite_produit, float prix_produit, String description_produit, String photo_pro) {
+        this.id_produit = id_produit;
+        this.nom = nom;
+        this.quantite_produit = quantite_produit;
+        this.prix_produit = prix_produit;
+        this.description_produit = description_produit;
+        this.photo_pro = photo_pro;
     }
+      
+
+    public Produit(String nom, float prix_produit, String description_produit, String photo_pro, String nom_cat) {
+        this.nom = nom;
+        this.prix_produit = prix_produit;
+        this.description_produit = description_produit;
+        this.photo_pro = photo_pro;
+        this.nom_cat = nom_cat;
+    }
+      
+
+    public Produit(int id_categorie, String nom, float prix_produit,String description_produit , Double quantite_produit, String photo_pro) {
+        this.id_categorie = id_categorie;
+        this.nom = nom; 
+        this.prix_produit = prix_produit;
+        this.quantite_produit = quantite_produit;
+        this.prix_produit = prix_produit;
+        this.description_produit = description_produit;
+        this.photo_pro = photo_pro;
+    }
+      
       
 
     public Produit(String nom) {
         this.nom = nom;
     }
 
-    
+    public String getNom_cat() {    
+        return nom_cat;
+    }
 
 //    public Produit(int id_produit, String nom, double quantite_produit, float prix_produit, String description_produit, String photo_pro, int like_dislike) {
 //        this.id_produit = id_produit;
@@ -55,8 +88,11 @@ public class Produit {
 //        this.like_dislike = like_dislike;
 //    }
 //      
+    public void setNom_cat(String nom_cat) {
+        this.nom_cat = nom_cat;
+    }
 
-    public Produit(String nom, float prix_produit,String description_produit,double quantite_produit,String photo_pro) {
+    public Produit(String nom, float prix_produit, String description_produit, double quantite_produit, String photo_pro) {
         this.nom = nom;
         this.prix_produit = prix_produit;
         this.description_produit = description_produit;
@@ -88,7 +124,8 @@ public class Produit {
 
     public void setId_categorie(int id_categorie) {
         this.id_categorie = id_categorie;
-    }
+    } 
+    
 
     public void setNom(String nom) {
         this.nom = nom;

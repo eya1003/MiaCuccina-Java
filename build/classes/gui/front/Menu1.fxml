@@ -105,12 +105,13 @@
                   <Font name="Segoe Print Bold" size="18.0" />
                </font>
             </Text>
-            <TableView fx:id="menutable" layoutX="200.0" layoutY="244.0" prefHeight="353.0" prefWidth="504.0" stylesheets="@Commande.css">
+            <TableView fx:id="menutable" layoutX="212.0" layoutY="244.0" prefHeight="353.0" prefWidth="531.0" stylesheets="@Commande.css">
                <columns>
-                  <TableColumn fx:id="nomcol" prefWidth="109.0" text="nom" />
-                  <TableColumn fx:id="prixcol" prefWidth="94.0" text="prix" />
-                  <TableColumn fx:id="desccol" minWidth="8.0" prefWidth="158.0" text="Description" />
-                  <TableColumn fx:id="imgccol" prefWidth="160.0" text="PhotoProd" />
+                  <TableColumn fx:id="nomcol" prefWidth="100.0" text="nom" />
+                  <TableColumn fx:id="prixcol" prefWidth="103.0" text="prix" />
+                  <TableColumn fx:id="desccol" minWidth="8.0" prefWidth="97.0" text="Description" />
+                  <TableColumn fx:id="imgccol" prefWidth="115.0" text="PhotoProd" />
+                  <TableColumn fx:id="catcol" prefWidth="115.0" text="Categorie" />
                </columns>
             </TableView>
             <TextField fx:id="srch" layoutX="212.0" layoutY="202.0" onAction="#search" />
