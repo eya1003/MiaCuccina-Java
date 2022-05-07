@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="600.0" style="-fx-background-color: #e9dee6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Eya.Controller">
+   <children>
+      <Label layoutX="94.0" layoutY="6.0" text="Send to" textFill="#009688" />
+      <TextField fx:id="emailToField" layoutX="217.0" layoutY="1.0" prefHeight="27.0" prefWidth="200.0" promptText="Example@example.com" />
+      <Label layoutX="94.0" layoutY="49.0" text="Send from" textFill="#009688" />
+      <TextField fx:id="emailFromField" layoutX="217.0" layoutY="44.0" prefHeight="27.0" prefWidth="200.0" promptText="Example@gmail.com" />
+      <Label layoutX="433.0" layoutY="49.0" text="&lt;- Has to be gmail!" textFill="#009688" />
+      <Label layoutX="94.0" layoutY="84.0" text="Password" textFill="#009688" />
+      <PasswordField fx:id="emailPasswordField" layoutX="217.0" layoutY="91.0" prefHeight="27.0" prefWidth="200.0" promptText="Abcd@1234" />
+      <Label layoutX="94.0" layoutY="144.0" text="Subject" textFill="#009688" />
+      <TextField fx:id="emailSubjectField" layoutX="217.0" layoutY="151.0" prefHeight="27.0" prefWidth="200.0" promptText="Object" />
+      <Label layoutX="94.0" layoutY="207.0" text="Message" textFill="#009688" />
+      <TextArea fx:id="emailMessageField" layoutX="217.0" layoutY="234.0" prefHeight="109.0" prefWidth="200.0" wrapText="true" />
+      <Button fx:id="sendEmailButton" layoutX="462.0" layoutY="263.0" mnemonicParsing="false" onAction="#buttonClicked" text="Send!" textFill="#ff009d" />
+      <Label fx:id="sentBoolValue" layoutX="474.0" layoutY="338.0" text="Message Sent!" visible="false" />
+      <ImageView fx:id="imageview" fitHeight="87.0" fitWidth="200.0" layoutX="217.0" layoutY="372.0" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="image" layoutX="429.0" layoutY="334.0" onAction="#image" prefHeight="37.0" prefWidth="159.0" style="-fx-background-color: #009688;" text="Import picture" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font></JFXButton>
+      <Label layoutX="90.0" layoutY="378.0" text="Attach Files here" textFill="#009688" />
+   </children>
+</AnchorPane>
