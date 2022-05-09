@@ -37,42 +37,27 @@ public class Cart {
         this.quantite = quantite;
     }
 
-    public Cart(int id, String nomProduit, float prix, int quantite, String image) {
-        this.id = id;
-        this.nomProduit = nomProduit;
-        this.prix = prix;
-        this.quantite = quantite;
-        this.image = image;
-    }
-
-    public Cart( int idProduit, String nomProduit, float prix,int quantite,String image,int idCommande) {
-        this.image=image;
-        this.spinner=new Spinner();
-        this.quantite = quantite;
-        this.svf = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, this.quantite);
-        this.spinner.setValueFactory(this.svf);
+    public Cart(int idProduit, String nomProduit, float prix, int quantite, String image) {
         this.idProduit = idProduit;
         this.nomProduit = nomProduit;
         this.prix = prix;
-        this.imageView=new ImageView();
-        this.imageView.setFitHeight(50);
-        this.imageView.setFitWidth(50);
-        this.imageView.setImage(new Image(getClass().getResourceAsStream(this.image)));
-        this.remove=new Button("");
-        ImageView imageButton=new ImageView();
-        imageButton.setImage(new Image(getClass().getResourceAsStream("/Gui/Images/Icon-awesome-trash-alt.png")));
-        imageButton.setFitHeight(20);
-        imageButton.setFitWidth(20);
-        this.remove.setGraphic(imageButton);
-        this.idCommande=idCommande;
-
+        this.quantite = quantite;
+        this.image = "C:\\xampp\\htdocs\\PI-DEV\\public\\uploads\\images\\"+image;
     }
+
+   
 
     public Cart(String nomProduit, float prix, int quantite, String image) {
         this.nomProduit = nomProduit;
         this.prix = prix;
         this.quantite = quantite;
         this.image = image;
+    }
+     public Cart(String nomProduit, float prix, int quantite, ImageView image) {
+        this.nomProduit = nomProduit;
+        this.prix = prix;
+        this.quantite = quantite;
+        this.imageView = image;
     }
 
     public Cart() {
@@ -104,6 +89,14 @@ public class Cart {
 
     public void setImageView(ImageView imageView) {
         this.imageView = imageView;
+    }
+
+    public int getIdCommande() {
+        return idCommande;
+    }
+
+    public void setIdCommande(int idCommande) {
+        this.idCommande = idCommande;
     }
 
     public void setRemove(Button remove) {

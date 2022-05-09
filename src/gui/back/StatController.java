@@ -40,6 +40,7 @@ public class StatController implements Initializable {
             Connection con = MyDB.getInstance().getConnexion();
             ResultSet rs = con.createStatement().executeQuery(query);
                barchart.setTitle("Stats");
+         
             while (rs.next()) {
                 series.getData().add(new XYChart.Data<>(rs.getString("nomProduit").toString(), rs.getInt("prix")));
             }

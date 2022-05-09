@@ -28,26 +28,26 @@ import services.TableService;
  *
  * @author macbook
  */
-
 //Main Class
 public class PersonnesFXMain extends Application {
+
     // singleton yaaml instance mara wa7da w ken t3awed izid aleha 
     Stage stage;
     Parent parent;
-    
+
     @Override
     public void start(Stage primaryStage) {
-       this.stage = primaryStage;
+        this.stage = primaryStage;
         try {
-            parent = FXMLLoader.load(getClass().getResource("/gui/back/AllFXML.fxml"));
+            parent = FXMLLoader.load(getClass().getResource("/gui/back/Cat1.fxml"));
+            // parent = FXMLLoader.load(getClass().getResource("/gui/front/Panier1.fxml"));
             Scene scene = new Scene(parent);
-          
+
             stage.setTitle("Acceuil");
             stage.setScene(scene);
-              primaryStage.initStyle(StageStyle.TRANSPARENT);
+            primaryStage.initStyle(StageStyle.TRANSPARENT);
             stage.show();
-           
-           
+
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
@@ -59,5 +59,5 @@ public class PersonnesFXMain extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

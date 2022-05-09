@@ -138,10 +138,8 @@ ObservableList<Commande>  commandeList = FXCollections.observableArrayList();
         
             try {
              
-                updateSer.update(44);
-                 updateSer.update(59);
-                  updateSer.update(67);
-            
+                   updateSer.update(80);
+                    updateSer.update(87);
          
                 showCommandes();
             } catch (SQLException ex) {

@@ -7,6 +7,7 @@ package entities;
 
 import java.sql.Date;
 import java.util.Objects;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -21,9 +22,10 @@ public class Produit {
    float prix_produit ; 
    String  description_produit ;
    String photo_pro;
-   int like_dislike;
+   int like_dislike;  
+   String nom_cat;
 
- public Produit(int id_produit, int id_categorie, String nom, Integer quantite_produit, float prix_produit, String description_produit, String photo_pro, int like_dislike) {
+ public Produit(int id_produit, int id_categorie, String nom, Double quantite_produit, float prix_produit, String description_produit, String photo_pro, int like_dislike) {
         this.id_produit = id_produit;
         this.id_categorie = id_categorie;
         this.nom = nom;
@@ -35,40 +37,84 @@ public class Produit {
     }
       public Produit() {
        
-    }
+    } 
 
-    public Produit(String nom, double quantite_produit, float prix_produit, String description_produit, String photo_pro, int like_dislike) {
-        this.nom = nom;
-        this.quantite_produit = quantite_produit;
-        this.prix_produit = prix_produit;
-        this.description_produit = description_produit;
-        this.photo_pro = photo_pro;
-        this.like_dislike = like_dislike;
-        
-    }
-
-    public Produit(int id_produit, String nom, double quantite_produit, float prix_produit, String description_produit, String photo_pro, int like_dislike) {
+    public Produit(int id_produit, String nom, double quantite_produit, float prix_produit, String description_produit, String photo_pro) {
         this.id_produit = id_produit;
         this.nom = nom;
         this.quantite_produit = quantite_produit;
         this.prix_produit = prix_produit;
         this.description_produit = description_produit;
         this.photo_pro = photo_pro;
-        this.like_dislike = like_dislike;
     }
       
 
-    public Produit(String nom, double quantite_produit, float prix_produit, String description_produit, String photo_pro) {
+    public Produit(String nom, float prix_produit, String description_produit, String photo_pro, String nom_cat) {
         this.nom = nom;
+        this.prix_produit = prix_produit;
+        this.description_produit = description_produit;
+        this.photo_pro = photo_pro;
+        this.nom_cat = nom_cat;
+    }
+      
+
+    public Produit(int id_categorie, String nom, float prix_produit,String description_produit , Double quantite_produit, String photo_pro) {
+        this.id_categorie = id_categorie;
+        this.nom = nom; 
+        this.prix_produit = prix_produit;
         this.quantite_produit = quantite_produit;
         this.prix_produit = prix_produit;
         this.description_produit = description_produit;
         this.photo_pro = photo_pro;
     }
+      
+      
 
-    public Produit(String name, int qty, Float prix, String desc, String img) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Produit(String nom) {
+        this.nom = nom;
     }
+
+    public String getNom_cat() {    
+        return nom_cat;
+    }
+
+//    public Produit(int id_produit, String nom, double quantite_produit, float prix_produit, String description_produit, String photo_pro, int like_dislike) {
+//        this.id_produit = id_produit;
+//        this.nom = nom;
+//        this.quantite_produit = quantite_produit;
+//        this.prix_produit = prix_produit;
+//        this.description_produit = description_produit;
+//        this.photo_pro = photo_pro;
+//        this.like_dislike = like_dislike;
+//    }
+//      
+    public void setNom_cat(String nom_cat) {
+        this.nom_cat = nom_cat;
+    }
+
+    public Produit(String nom, float prix_produit, String description_produit, double quantite_produit, String photo_pro) {
+        this.nom = nom;
+        this.prix_produit = prix_produit;
+        this.description_produit = description_produit;
+        this.quantite_produit = quantite_produit;
+        this.photo_pro=photo_pro;
+    }
+
+    public Produit(String nom, float prix_produit, String description_produit) {
+        this.nom = nom;
+        this.prix_produit = prix_produit;
+        this.description_produit = description_produit;
+    }
+
+    public Produit(String nom, float prix_produit, String description_produit, String photo_pro) {
+        this.nom = nom;
+        this.prix_produit = prix_produit;
+        this.description_produit = description_produit;
+        this.photo_pro = photo_pro;
+    }
+
+    
+   
 
   
 
@@ -78,7 +124,8 @@ public class Produit {
 
     public void setId_categorie(int id_categorie) {
         this.id_categorie = id_categorie;
-    }
+    } 
+    
 
     public void setNom(String nom) {
         this.nom = nom;
@@ -139,6 +186,10 @@ public class Produit {
     @Override
     public String toString() {
         return "Produit{" + "id_produit=" + id_produit + ", id_categorie=" + id_categorie + ", nom=" + nom + ", quantite_produit=" + quantite_produit + ", prix_produit=" + prix_produit + ", description_produit=" + description_produit + ", photo_pro=" + photo_pro + ", like_dislike=" + like_dislike + '}';
+    }
+
+    public ObservableList<Produit> getAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
