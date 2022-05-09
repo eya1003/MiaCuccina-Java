@@ -135,6 +135,16 @@ public class FrontReservationFXMLController implements Initializable {
 
     @FXML
     private void btneventFront(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("event/EventFront.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(Event_frontController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML

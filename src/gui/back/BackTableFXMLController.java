@@ -207,14 +207,14 @@ public class BackTableFXMLController implements Initializable {
     @FXML
     private void btnlListeEvent(MouseEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Parent parent = FXMLLoader.load(getClass().getResource("event/Evenement.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            //Logger.getLogger(.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EvenementController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

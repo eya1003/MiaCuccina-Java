@@ -70,6 +70,8 @@ public class AllFXMLController implements Initializable {
     private Button m;
     @FXML
     private Button n;
+    @FXML
+    private Button p;
 
     /**
      * Initializes the controller class.
@@ -137,14 +139,14 @@ public class AllFXMLController implements Initializable {
     @FXML
     private void btnlListeEvent(MouseEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/Evenement.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            //Logger.getLogger(.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EvenementController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -247,6 +249,10 @@ public class AllFXMLController implements Initializable {
     
 
     private void exporttoexcel(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnListeAvis(MouseEvent event) {
     }
 
 }

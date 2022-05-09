@@ -51,7 +51,7 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Button mnemonicParsing="false" onMouseClicked="#btneventFront" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #B42506;" text="Evenement">
+            <Button mnemonicParsing="false" onMouseClicked="#btnlListeEventFront" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #B42506;" text="Evenement">
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                      <image>

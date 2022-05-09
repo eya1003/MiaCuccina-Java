@@ -6,17 +6,24 @@
 package gui.front;
 
 import entities.Livraison;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import services.LivraisonService;
 
 /**
@@ -51,6 +58,16 @@ public class FrontLivraisonFXMLController implements Initializable {
 
     @FXML
     private void btneventFront(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("event/EventFront.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(Event_frontController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML

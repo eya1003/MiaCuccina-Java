@@ -40,7 +40,7 @@ public class PersonnesFXMain extends Application {
         
        this.stage = primaryStage;
         try {
-            parent = FXMLLoader.load(getClass().getResource("/gui/back/AllFXML.fxml"));
+            parent = FXMLLoader.load(getClass().getResource("/gui/signIn.fxml"));
             Scene scene = new Scene(parent);
           
             stage.setTitle("Acceuil");
