@@ -153,7 +153,7 @@ public class AllFXMLController implements Initializable {
     @FXML
     private void btnListePanier(MouseEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Parent parent = FXMLLoader.load(getClass().getResource("/GUI/front/Panier1.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
@@ -167,7 +167,7 @@ public class AllFXMLController implements Initializable {
     @FXML
     private void btnListeCommandes(MouseEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/commandee.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
@@ -181,7 +181,7 @@ public class AllFXMLController implements Initializable {
     @FXML
     private void btnListeProduit(MouseEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource(""));
+            Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/AjoutProduit1.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
@@ -222,6 +222,16 @@ public class AllFXMLController implements Initializable {
 
     @FXML
     private void btnListecategorie(MouseEvent event) {
+         try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/GUI/back/Cat1.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+          //  Logger.getLogger(ListReservationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @FXML

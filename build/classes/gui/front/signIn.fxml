@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="431.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.front.SignInController">
+   <children>
+      <AnchorPane layoutY="1.0" prefHeight="431.0" prefWidth="702.0" style="-fx-background-color: #e9dee6;">
+         <children>
+            <TextField fx:id="txtusername" layoutX="383.0" layoutY="135.0" prefHeight="27.0" prefWidth="231.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #c25009; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Button fx:id="loginBtn" layoutX="374.0" layoutY="292.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="249.0" style="-fx-background-color: #c25009;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <PasswordField fx:id="txtpass" layoutX="383.0" layoutY="191.0" prefHeight="27.0" prefWidth="231.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #c25009; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="419.0" layoutY="361.0" text="Create account" />
+            <Button fx:id="signupBtn" layoutX="497.0" layoutY="357.0" mnemonicParsing="false" onAction="#signupScene" style="-fx-background-color: transparent;" text="Sign Up" textFill="#c25009" />
+            <AnchorPane prefHeight="431.0" prefWidth="312.0" style="-fx-background-color: black;">
+               <children>
+                  <Label layoutX="78.0" layoutY="205.0" text="Welcome to" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="127.0" layoutY="228.0" prefHeight="35.0" prefWidth="103.0" text="MiaCuccina" textFill="WHITE">
+                     <font>
+                        <Font name="Chiller" size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label fx:id="errorLabel" layoutX="395.0" layoutY="326.0" prefHeight="17.0" prefWidth="81.0" />
+            <Label fx:id="errorMsg" layoutX="379.0" layoutY="262.0" prefHeight="17.0" prefWidth="240.0" textFill="#c66510" />
+            <Button fx:id="forgotBtn" layoutX="512.0" layoutY="219.0" mnemonicParsing="false" onAction="#forgotPsw" style="-fx-background-color: transparent;" text="Forgot password?" textFill="#c25009" />
+            <Button fx:id="exitBtn" layoutX="634.0" layoutY="2.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: transparent;" text="X">
+               <font>
+                  <Font name="Microsoft YaHei Bold" size="13.0" />
+               </font>
+            </Button>
+           
+            <ComboBox fx:id="roletf" layoutX="476.0" layoutY="68.0" prefWidth="150.0" promptText="Role" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
