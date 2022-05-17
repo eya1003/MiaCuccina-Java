@@ -42,7 +42,7 @@ public class Cart {
         this.nomProduit = nomProduit;
         this.prix = prix;
         this.quantite = quantite;
-        this.image = "C:\\wamp64\\www\\Pi-Dev-Deligent-dev-zeineb\\zeineb\\PI-DEV\\public\\uploads\\images\\"+image;
+        this.image = "C:\\xampp\\htdocs\\PI-DEV\\public\\uploads\\images\\"+image;
     }
 
    
